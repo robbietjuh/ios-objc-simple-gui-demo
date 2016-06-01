@@ -17,15 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_0003.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="Fow-Q1-t9y">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IMG_0003.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="Fow-Q1-t9y">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                             </imageView>
-                            <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yws-ef-mxV">
+                            <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yws-ef-mxV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbb-Lr-GbN">
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbb-Lr-GbN">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="BsJ-BS-uX2">
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="BsJ-BS-uX2">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
@@ -33,6 +33,12 @@
                                     </visualEffectView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gbb-Lr-GbN" secondAttribute="trailing" id="A0d-WH-ytt"/>
+                                    <constraint firstAttribute="bottom" secondItem="gbb-Lr-GbN" secondAttribute="bottom" id="E3G-Vc-C0I"/>
+                                    <constraint firstItem="gbb-Lr-GbN" firstAttribute="top" secondItem="yws-ef-mxV" secondAttribute="top" id="Rdr-PU-jc0"/>
+                                    <constraint firstItem="gbb-Lr-GbN" firstAttribute="leading" secondItem="yws-ef-mxV" secondAttribute="leading" id="jx5-2F-PEb"/>
+                                </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0g-6f-ZE9">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
@@ -92,6 +98,16 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fow-Q1-t9y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="01D-u1-k3H"/>
+                            <constraint firstItem="yws-ef-mxV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0fb-kr-6Wf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Fow-Q1-t9y" secondAttribute="bottom" id="AY1-tW-XFg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yws-ef-mxV" secondAttribute="bottom" id="K9t-jb-PhE"/>
+                            <constraint firstAttribute="trailing" secondItem="Fow-Q1-t9y" secondAttribute="trailing" id="LAt-lm-aLx"/>
+                            <constraint firstItem="Fow-Q1-t9y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SqJ-Kx-8Iz"/>
+                            <constraint firstAttribute="trailing" secondItem="yws-ef-mxV" secondAttribute="trailing" id="eJc-6j-uTb"/>
+                            <constraint firstItem="yws-ef-mxV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fr3-4f-vD6"/>
+                        </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
