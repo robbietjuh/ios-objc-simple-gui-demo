@@ -15,6 +15,12 @@
 		E1363AF71CFF626500111971 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1363AF51CFF626500111971 /* LaunchScreen.storyboard */; };
 		E1363B021CFF626500111971 /* SocialWeatherTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1363B011CFF626500111971 /* SocialWeatherTestTests.m */; };
 		E1363B0D1CFF626500111971 /* SocialWeatherTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1363B0C1CFF626500111971 /* SocialWeatherTestUITests.m */; };
+		E1363B1B1CFF631200111971 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1363B1A1CFF631200111971 /* View.xib */; };
+		E1363B1D1CFF633D00111971 /* IMG_0003.JPG in Resources */ = {isa = PBXBuildFile; fileRef = E1363B1C1CFF633D00111971 /* IMG_0003.JPG */; };
+		E1363B1F1CFF64FA00111971 /* Adam_LR_Round_Profile_Pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E1363B1E1CFF64FA00111971 /* Adam_LR_Round_Profile_Pic.jpg */; };
+		E1363B211CFF659C00111971 /* avatar-phil-schiller.png in Resources */ = {isa = PBXBuildFile; fileRef = E1363B201CFF659C00111971 /* avatar-phil-schiller.png */; };
+		E1363B231CFF66E100111971 /* heart-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E1363B221CFF66E100111971 /* heart-icon.png */; };
+		E1363B251CFF686800111971 /* sunny-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E1363B241CFF686800111971 /* sunny-icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,12 @@
 		E1363B081CFF626500111971 /* SocialWeatherTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialWeatherTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1363B0C1CFF626500111971 /* SocialWeatherTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialWeatherTestUITests.m; sourceTree = "<group>"; };
 		E1363B0E1CFF626500111971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1363B1A1CFF631200111971 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		E1363B1C1CFF633D00111971 /* IMG_0003.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0003.JPG; sourceTree = "<group>"; };
+		E1363B1E1CFF64FA00111971 /* Adam_LR_Round_Profile_Pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Adam_LR_Round_Profile_Pic.jpg; sourceTree = "<group>"; };
+		E1363B201CFF659C00111971 /* avatar-phil-schiller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar-phil-schiller.png"; sourceTree = "<group>"; };
+		E1363B221CFF66E100111971 /* heart-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-icon.png"; sourceTree = "<group>"; };
+		E1363B241CFF686800111971 /* sunny-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sunny-icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +122,7 @@
 				E1363AF51CFF626500111971 /* LaunchScreen.storyboard */,
 				E1363AF81CFF626500111971 /* Info.plist */,
 				E1363AE71CFF626500111971 /* Supporting Files */,
+				E1363B1A1CFF631200111971 /* View.xib */,
 			);
 			path = SocialWeatherTest;
 			sourceTree = "<group>";
@@ -117,6 +130,11 @@
 		E1363AE71CFF626500111971 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E1363B1C1CFF633D00111971 /* IMG_0003.JPG */,
+				E1363B241CFF686800111971 /* sunny-icon.png */,
+				E1363B1E1CFF64FA00111971 /* Adam_LR_Round_Profile_Pic.jpg */,
+				E1363B201CFF659C00111971 /* avatar-phil-schiller.png */,
+				E1363B221CFF66E100111971 /* heart-icon.png */,
 				E1363AE81CFF626500111971 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -243,8 +261,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1363B211CFF659C00111971 /* avatar-phil-schiller.png in Resources */,
+				E1363B1B1CFF631200111971 /* View.xib in Resources */,
 				E1363AF71CFF626500111971 /* LaunchScreen.storyboard in Resources */,
+				E1363B231CFF66E100111971 /* heart-icon.png in Resources */,
 				E1363AF41CFF626500111971 /* Assets.xcassets in Resources */,
+				E1363B251CFF686800111971 /* sunny-icon.png in Resources */,
+				E1363B1D1CFF633D00111971 /* IMG_0003.JPG in Resources */,
+				E1363B1F1CFF64FA00111971 /* Adam_LR_Round_Profile_Pic.jpg in Resources */,
 				E1363AF21CFF626500111971 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
