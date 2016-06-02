@@ -40,4 +40,18 @@
     [self.blurContainer setAlpha: alpha];
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return section == 0 ? 20 : 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"detailCellExample"];
+    
+    cell.textLabel.text = @"Dit is een test";
+    cell.backgroundColor = nil;
+    cell.textLabel.textColor = [UIColor whiteColor];
+    
+    return cell;
+}
+
 @end
