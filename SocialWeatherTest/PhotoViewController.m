@@ -1,14 +1,14 @@
 //
-//  ViewController.m
+//  PhotoViewController
 //  SocialWeatherTest
 //
 //  Created by R. de Vries on 01-06-16.
 //  Copyright © 2016 R. de Vries. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "PhotoViewController.h"
 
-@interface ViewController ()
+@interface PhotoViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *blurContainer;
@@ -16,7 +16,9 @@
 
 @end
 
-@implementation ViewController
+@implementation PhotoViewController
+
+#pragma mark - View setup
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,7 +33,11 @@
     [self.scrollView setTag: 1337];
     [self.scrollView setPagingEnabled: YES];
     [self.scrollView setDelegate: self];
+    
+    [self.scrollView.panGestureRecognizer addTarget: self action: @selector(handleGesture:)];
 }
+
+#pragma mark - Scroll view handlers
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // Check for the scrollview tag. We don't want to apply blur updates when the user scrolls
@@ -45,6 +51,51 @@
     float alpha = MIN(offset.y / 100.0, 1.0);
     [self.blurContainer setAlpha: alpha];
 }
+
+- (void)handleGesture:(UIPanGestureRecognizer *)sender {
+    CGFloat percentThreshold = 0.3;
+    
+    // Require the scrollview to be at its top
+    if(sender.view != self.scrollView || self.scrollView.contentOffset.y > 0) {
+        return;
+    }
+    
+    // Calculate the percentage of screen real estate the user has 'pulled'
+    CGPoint position = [sender translationInView: self.view];
+    CGFloat movementOnAxis = position.y / self.view.bounds.size.height;
+    CGFloat positiveMovementOnAxis = MAX(movementOnAxis, 0.0);
+    CGFloat movementPercentage = MIN(positiveMovementOnAxis, 1.0);
+    
+    switch (sender.state) {
+        case UIGestureRecognizerStateBegan:
+            self.interactor.hasStarted = YES;
+            [self dismissViewControllerAnimated: YES completion: nil];
+            break;
+            
+        case UIGestureRecognizerStateChanged:
+            self.interactor.shouldFinish = movementPercentage > percentThreshold;
+            [self.interactor updateInteractiveTransition: movementPercentage];
+            break;
+            
+        case UIGestureRecognizerStateCancelled:
+            self.interactor.hasStarted = NO;
+            [self.interactor cancelInteractiveTransition];
+            break;
+            
+        case UIGestureRecognizerStateEnded:
+            self.interactor.hasStarted = NO;
+            if(self.interactor.shouldFinish)
+                [self.interactor finishInteractiveTransition];
+            else
+                [self.interactor cancelInteractiveTransition];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+#pragma mark - Table view content handlers
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Render 20 cells
