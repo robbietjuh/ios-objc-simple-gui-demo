@@ -296,7 +296,6 @@
                             <constraint firstItem="yws-ef-mxV" firstAttribute="leading" secondItem="Fow-Q1-t9y" secondAttribute="leading" id="ukV-y4-MrQ"/>
                         </constraints>
                     </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="blurContainer" destination="yws-ef-mxV" id="sgE-f9-lcZ"/>
