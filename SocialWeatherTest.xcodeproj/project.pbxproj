@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E1363AE91CFF626500111971 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1363AE81CFF626500111971 /* main.m */; };
-		E1363AEC1CFF626500111971 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1363AEB1CFF626500111971 /* AppDelegate.m */; };
-		E1363AEF1CFF626500111971 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1363AEE1CFF626500111971 /* PhotoViewController.m */; };
 		E1363AF21CFF626500111971 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1363AF01CFF626500111971 /* Main.storyboard */; };
 		E1363AF41CFF626500111971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1363AF31CFF626500111971 /* Assets.xcassets */; };
 		E1363AF71CFF626500111971 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1363AF51CFF626500111971 /* LaunchScreen.storyboard */; };
@@ -20,9 +17,11 @@
 		E1363B231CFF66E100111971 /* heart-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E1363B221CFF66E100111971 /* heart-icon.png */; };
 		E1363B251CFF686800111971 /* sunny-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E1363B241CFF686800111971 /* sunny-icon.png */; };
 		E1363B271CFFD39000111971 /* round-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = E1363B261CFFD39000111971 /* round-profile.png */; };
-		E1363B291CFFE56800111971 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1363B281CFFE56800111971 /* IntroViewController.m */; };
-		E1363B331CFFE88500111971 /* Interactor.m in Sources */ = {isa = PBXBuildFile; fileRef = E1363B321CFFE88500111971 /* Interactor.m */; };
-		E1363B361CFFEFCF00111971 /* DismissAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E1363B351CFFEFCF00111971 /* DismissAnimator.m */; };
+		E1363B381D025FD400111971 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1363B371D025FD400111971 /* PhotoViewController.swift */; };
+		E1363B761D02631800111971 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1363B751D02631800111971 /* AppDelegate.swift */; };
+		E1363B781D026EBC00111971 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1363B771D026EBC00111971 /* IntroViewController.swift */; };
+		E1363B7A1D02705F00111971 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1363B791D02705F00111971 /* Interactor.swift */; };
+		E1363B7C1D02707500111971 /* DismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1363B7B1D02707500111971 /* DismissAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +43,6 @@
 
 /* Begin PBXFileReference section */
 		E1363AE41CFF626500111971 /* SocialWeatherTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialWeatherTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1363AE81CFF626500111971 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E1363AEA1CFF626500111971 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E1363AEB1CFF626500111971 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E1363AED1CFF626500111971 /* PhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
-		E1363AEE1CFF626500111971 /* PhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		E1363AF11CFF626500111971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1363AF31CFF626500111971 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1363AF61CFF626500111971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,12 +58,11 @@
 		E1363B221CFF66E100111971 /* heart-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-icon.png"; sourceTree = "<group>"; };
 		E1363B241CFF686800111971 /* sunny-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sunny-icon.png"; sourceTree = "<group>"; };
 		E1363B261CFFD39000111971 /* round-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "round-profile.png"; sourceTree = "<group>"; };
-		E1363B281CFFE56800111971 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
-		E1363B2A1CFFE58600111971 /* IntroViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
-		E1363B311CFFE88500111971 /* Interactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interactor.h; sourceTree = "<group>"; };
-		E1363B321CFFE88500111971 /* Interactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interactor.m; sourceTree = "<group>"; };
-		E1363B341CFFEFCF00111971 /* DismissAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissAnimator.h; sourceTree = "<group>"; };
-		E1363B351CFFEFCF00111971 /* DismissAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissAnimator.m; sourceTree = "<group>"; };
+		E1363B371D025FD400111971 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		E1363B751D02631800111971 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E1363B771D026EBC00111971 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		E1363B791D02705F00111971 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		E1363B7B1D02707500111971 /* DismissAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,26 +113,21 @@
 		E1363AE61CFF626500111971 /* SocialWeatherTest */ = {
 			isa = PBXGroup;
 			children = (
-				E1363AEA1CFF626500111971 /* AppDelegate.h */,
-				E1363AEB1CFF626500111971 /* AppDelegate.m */,
-				E1363AED1CFF626500111971 /* PhotoViewController.h */,
-				E1363AEE1CFF626500111971 /* PhotoViewController.m */,
-				E1363B2A1CFFE58600111971 /* IntroViewController.h */,
-				E1363B281CFFE56800111971 /* IntroViewController.m */,
-				E1363B311CFFE88500111971 /* Interactor.h */,
-				E1363B321CFFE88500111971 /* Interactor.m */,
+				E1363B751D02631800111971 /* AppDelegate.swift */,
+				E1363B371D025FD400111971 /* PhotoViewController.swift */,
+				E1363B771D026EBC00111971 /* IntroViewController.swift */,
+				E1363B791D02705F00111971 /* Interactor.swift */,
+				E1363B7B1D02707500111971 /* DismissAnimator.swift */,
 				E1363AF01CFF626500111971 /* Main.storyboard */,
 				E1363AF31CFF626500111971 /* Assets.xcassets */,
 				E1363AF51CFF626500111971 /* LaunchScreen.storyboard */,
 				E1363AF81CFF626500111971 /* Info.plist */,
-				E1363AE71CFF626500111971 /* Supporting Files */,
-				E1363B341CFFEFCF00111971 /* DismissAnimator.h */,
-				E1363B351CFFEFCF00111971 /* DismissAnimator.m */,
+				E1363AE71CFF626500111971 /* Mockup Files */,
 			);
 			path = SocialWeatherTest;
 			sourceTree = "<group>";
 		};
-		E1363AE71CFF626500111971 /* Supporting Files */ = {
+		E1363AE71CFF626500111971 /* Mockup Files */ = {
 			isa = PBXGroup;
 			children = (
 				E1363B261CFFD39000111971 /* round-profile.png */,
@@ -147,9 +135,8 @@
 				E1363B241CFF686800111971 /* sunny-icon.png */,
 				E1363B201CFF659C00111971 /* avatar-phil-schiller.png */,
 				E1363B221CFF66E100111971 /* heart-icon.png */,
-				E1363AE81CFF626500111971 /* main.m */,
 			);
-			name = "Supporting Files";
+			name = "Mockup Files";
 			sourceTree = "<group>";
 		};
 		E1363B001CFF626500111971 /* SocialWeatherTestTests */ = {
@@ -305,12 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1363AEF1CFF626500111971 /* PhotoViewController.m in Sources */,
-				E1363B361CFFEFCF00111971 /* DismissAnimator.m in Sources */,
-				E1363B331CFFE88500111971 /* Interactor.m in Sources */,
-				E1363AEC1CFF626500111971 /* AppDelegate.m in Sources */,
-				E1363AE91CFF626500111971 /* main.m in Sources */,
-				E1363B291CFFE56800111971 /* IntroViewController.m in Sources */,
+				E1363B761D02631800111971 /* AppDelegate.swift in Sources */,
+				E1363B781D026EBC00111971 /* IntroViewController.swift in Sources */,
+				E1363B381D025FD400111971 /* PhotoViewController.swift in Sources */,
+				E1363B7A1D02705F00111971 /* Interactor.swift in Sources */,
+				E1363B7C1D02707500111971 /* DismissAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +442,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.robbytu.SocialWeatherTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SocialWeatherTest/SocialWeatherTest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -470,7 +456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.robbytu.SocialWeatherTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SocialWeatherTest/SocialWeatherTest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
