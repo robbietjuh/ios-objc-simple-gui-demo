@@ -113,16 +113,14 @@
 		E1363AE61CFF626500111971 /* SocialWeatherTest */ = {
 			isa = PBXGroup;
 			children = (
-				E1363B751D02631800111971 /* AppDelegate.swift */,
-				E1363B371D025FD400111971 /* PhotoViewController.swift */,
-				E1363B771D026EBC00111971 /* IntroViewController.swift */,
-				E1363B791D02705F00111971 /* Interactor.swift */,
-				E1363B7B1D02707500111971 /* DismissAnimator.swift */,
-				E1363AF01CFF626500111971 /* Main.storyboard */,
-				E1363AF31CFF626500111971 /* Assets.xcassets */,
-				E1363AF51CFF626500111971 /* LaunchScreen.storyboard */,
-				E1363AF81CFF626500111971 /* Info.plist */,
 				E1363AE71CFF626500111971 /* Mockup Files */,
+				E1363B7E1D027B0B00111971 /* Utils */,
+				E1363B7D1D027AF900111971 /* Controllers */,
+				E1363B751D02631800111971 /* AppDelegate.swift */,
+				E1363AF01CFF626500111971 /* Main.storyboard */,
+				E1363AF51CFF626500111971 /* LaunchScreen.storyboard */,
+				E1363AF31CFF626500111971 /* Assets.xcassets */,
+				E1363AF81CFF626500111971 /* Info.plist */,
 			);
 			path = SocialWeatherTest;
 			sourceTree = "<group>";
@@ -155,6 +153,24 @@
 				E1363B0E1CFF626500111971 /* Info.plist */,
 			);
 			path = SocialWeatherTestUITests;
+			sourceTree = "<group>";
+		};
+		E1363B7D1D027AF900111971 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E1363B371D025FD400111971 /* PhotoViewController.swift */,
+				E1363B771D026EBC00111971 /* IntroViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E1363B7E1D027B0B00111971 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E1363B791D02705F00111971 /* Interactor.swift */,
+				E1363B7B1D02707500111971 /* DismissAnimator.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
