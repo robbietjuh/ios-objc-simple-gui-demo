@@ -51,6 +51,9 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
     }
     
     func handlePanGesture(sender: UIPanGestureRecognizer!) {
+        // Safely get the shared interactor
+        guard let interactor = self.interactor else { return }
+        
         // Percentage the user has to scroll in order to dismiss the view
         let releaseThreshold = CGFloat(0.3)
         
@@ -62,10 +65,7 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
         // Calculate the percentage of screen real estate the user has 'pulled'
         let position = sender.translationInView(self.view)
         let movement = max(position.y / self.view.bounds.size.height, 0.0)
-        let movementPercentage = max(movement, 1.0)
-        
-        // Safely get the shared interactor
-        guard let interactor = self.interactor else { return }
+        let movementPercentage = min(movement, 1.0)
         
         // Switch states and handle accordingly
         switch sender.state {

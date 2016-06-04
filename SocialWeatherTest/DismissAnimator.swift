@@ -25,7 +25,7 @@ class DismissAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             }
         
         // Insert the to view into the container view
-        container.insertSubview(to.view, aboveSubview: from.view)
+        container.insertSubview(to.view, belowSubview: from.view)
         
         // Hide the from view as we're going to use snapshots for better performance
         from.view.hidden = true

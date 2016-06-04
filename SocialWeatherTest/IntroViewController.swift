@@ -10,15 +10,12 @@ import UIKit
 
 class IntroViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
-    private var interactor:Interactor? = nil
+    private var interactor:Interactor = Interactor()
     
     // MARK: - View setup
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Set up a new instance of the Interactor
-        self.interactor = Interactor()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -36,7 +33,7 @@ class IntroViewController: UIViewController, UIViewControllerTransitioningDelega
     }
     
     func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return self.interactor!.hasStarted ? self.interactor : nil
+        return self.interactor.hasStarted ? self.interactor : nil
     }
     
 }
