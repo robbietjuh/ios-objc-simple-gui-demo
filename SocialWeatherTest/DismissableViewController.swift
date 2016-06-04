@@ -24,6 +24,8 @@ class DismissableViewController : UIViewController {
         let movement = max(position.y / self.view.bounds.size.height, 0.0)
         let movementPercentage = min(movement, 1.0)
         
+        if !interactor.hasStarted && position.y < 5 { return }
+        
         // Switch states and handle accordingly
         switch sender.state {
         case .Began:

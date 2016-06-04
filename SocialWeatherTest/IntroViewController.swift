@@ -19,7 +19,7 @@ class IntroViewController: UIViewController, UIViewControllerTransitioningDelega
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let destViewController = segue.destinationViewController as? PhotoViewController {
+        if let destViewController = segue.destinationViewController as? DismissableViewController {
             // This is a transition to the PhotoViewController view, so we'll have to inject
             // ourselves as the transitioning delegate and the interactor as a shared interactor.
             // The key "TransitionToPhotoViewController" is set in the Storyboard.

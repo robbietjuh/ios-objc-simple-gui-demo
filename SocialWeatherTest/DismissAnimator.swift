@@ -27,21 +27,12 @@ class DismissAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         // Insert the to view into the container view
         container.insertSubview(to.view, belowSubview: from.view)
         
-        // Hide the from view as we're going to use snapshots for better performance
-        from.view.hidden = true
-        
-        // Make and insert the snapshot we were just talking about
-        let snapshot = from.view.snapshotViewAfterScreenUpdates(false)
-        container.insertSubview(snapshot, aboveSubview: to.view)
-        
         // Actually animate the views
         UIView.animateWithDuration(self.transitionDuration(transitionContext), animations: {
-            var geo = snapshot.center;
+            var geo = from.view.center;
             geo.y += UIScreen.mainScreen().bounds.size.height
-            snapshot.center = geo
+            from.view.center = geo
         }, completion: { _ in
-            from.view.hidden = false
-            snapshot.removeFromSuperview()
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
         })
     }
