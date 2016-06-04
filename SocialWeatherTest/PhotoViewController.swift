@@ -29,7 +29,7 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
         self.scrollView.tag = 1337
         self.scrollView.pagingEnabled = true
         self.scrollView.delegate = self
-        self.scrollView.panGestureRecognizer.addTarget(self, action: "handlePanGesture:")
+        self.scrollView.panGestureRecognizer.addTarget(self, action: #selector(PhotoViewController.handlePanGesture(_:)))
     }
     
     // MARK: - Scroll view delegate handlers
