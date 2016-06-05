@@ -8,11 +8,13 @@
 
 import UIKit
 
-class PhotoViewController: DismissableViewController, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
+class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var userDetailView: UIView!
     @IBOutlet weak var blurContainer: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    var data : [String: AnyObject]?
     
     // MARK: - View setup
     
@@ -27,7 +29,8 @@ class PhotoViewController: DismissableViewController, UIScrollViewDelegate, UITa
         self.scrollView.tag = 1337
         self.scrollView.pagingEnabled = true
         self.scrollView.delegate = self
-        self.scrollView.panGestureRecognizer.addTarget(self, action: #selector(PhotoViewController.handleDismissablePanGesture(_:)))
+        
+        // TODO: Do something with self.data here
     }
     
     // MARK: - Scroll view delegate handlers
@@ -46,15 +49,6 @@ class PhotoViewController: DismissableViewController, UIScrollViewDelegate, UITa
         // Update the alpha layer of the blur container view
         let alpha = min(offset.y / 100.0, 1.0)
         self.blurContainer.alpha = alpha
-    }
-    
-    override func handleDismissablePanGesture(sender: UIPanGestureRecognizer!) {
-        // Require the scrollview to be at its top
-        if(sender.view != self.scrollView || self.scrollView.contentOffset.y > 0) {
-            return
-        }
-        
-        super.handleDismissablePanGesture(sender)
     }
     
     // MARK: - Table view datasource handlers

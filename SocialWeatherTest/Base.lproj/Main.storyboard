@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2cW-yq-bs2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T2S-ed-9jR">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -9,7 +9,8 @@
         <!--Intro View Controller-->
         <scene sceneID="xxD-6W-oCu">
             <objects>
-                <viewController id="2cW-yq-bs2" customClass="IntroViewController" customModule="SocialWeatherTest" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o3r-Fe-KfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="IntroViewController" id="2cW-yq-bs2" customClass="IntroViewController" customModule="SocialWeatherTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6uA-cN-sf3"/>
                         <viewControllerLayoutGuide type="bottom" id="ZMX-vL-Q8W"/>
@@ -64,18 +65,6 @@
                                             <constraint firstAttribute="height" constant="1" id="nCm-EO-Kfc"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVo-Kg-XDY">
-                                        <rect key="frame" x="0.0" y="534" width="375" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="OQu-ey-u9m"/>
-                                        </constraints>
-                                        <state key="normal" title="Show local posts">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="Cj6-BI-niO"/>
-                                        </connections>
-                                    </button>
                                     <view alpha="0.20000000000000001" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WWh-Gg-eUM">
                                         <rect key="frame" x="0.0" y="534" width="375" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -109,7 +98,6 @@
                                     <constraint firstItem="t5w-5v-UKO" firstAttribute="leading" secondItem="Fev-hM-lZ5" secondAttribute="leading" id="5Uj-Yw-DAW"/>
                                     <constraint firstItem="WWh-Gg-eUM" firstAttribute="leading" secondItem="Fev-hM-lZ5" secondAttribute="leading" id="5ec-ef-W1I"/>
                                     <constraint firstItem="usq-RF-9up" firstAttribute="leading" secondItem="Fev-hM-lZ5" secondAttribute="leading" id="BNs-Wd-qov"/>
-                                    <constraint firstItem="usq-RF-9up" firstAttribute="top" secondItem="EVo-Kg-XDY" secondAttribute="bottom" constant="43" id="FLj-yd-IGv"/>
                                     <constraint firstAttribute="trailing" secondItem="QTg-cG-bGY" secondAttribute="trailing" id="GiA-vj-2id"/>
                                     <constraint firstAttribute="trailing" secondItem="hbM-Ca-Ajs" secondAttribute="trailing" id="JjX-Rf-hxR"/>
                                     <constraint firstAttribute="trailing" secondItem="vhV-Q9-hDo" secondAttribute="trailing" constant="8" id="JuZ-Oc-fBI"/>
@@ -127,11 +115,9 @@
                                     <constraint firstAttribute="trailing" secondItem="usq-RF-9up" secondAttribute="trailing" id="b2G-Wh-rIA"/>
                                     <constraint firstItem="vhV-Q9-hDo" firstAttribute="leading" secondItem="Fev-hM-lZ5" secondAttribute="leading" constant="8" id="dEv-CX-IUW"/>
                                     <constraint firstItem="usq-RF-9up" firstAttribute="top" secondItem="QTg-cG-bGY" secondAttribute="bottom" constant="43" id="dPP-Bg-aIQ"/>
-                                    <constraint firstItem="EVo-Kg-XDY" firstAttribute="leading" secondItem="Fev-hM-lZ5" secondAttribute="leading" id="eba-KM-pQ4"/>
                                     <constraint firstAttribute="trailing" secondItem="kjn-XS-dU2" secondAttribute="trailing" id="fSJ-VD-C4C"/>
                                     <constraint firstItem="hbM-Ca-Ajs" firstAttribute="leading" secondItem="Fev-hM-lZ5" secondAttribute="leading" id="gBE-sR-lEZ"/>
                                     <constraint firstItem="WWh-Gg-eUM" firstAttribute="top" secondItem="kjn-XS-dU2" secondAttribute="bottom" constant="43" id="kZ7-ZB-sMb"/>
-                                    <constraint firstAttribute="trailing" secondItem="EVo-Kg-XDY" secondAttribute="trailing" id="wQZ-bo-ZU0"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -146,14 +132,13 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o3r-Fe-KfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-27.5" y="671.5"/>
+            <point key="canvasLocation" x="380.5" y="367.5"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PhotoViewController" customModule="SocialWeatherTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoViewController" id="BYZ-38-t0r" customClass="PhotoViewController" customModule="SocialWeatherTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -162,7 +147,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0003.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="Fow-Q1-t9y">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0003.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="Fow-Q1-t9y">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yws-ef-mxV">
@@ -179,10 +164,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="gbb-Lr-GbN" firstAttribute="leading" secondItem="yws-ef-mxV" secondAttribute="leading" id="HD5-h0-tW1"/>
-                                    <constraint firstItem="gbb-Lr-GbN" firstAttribute="width" secondItem="yws-ef-mxV" secondAttribute="width" id="LEB-sH-bmm"/>
-                                    <constraint firstItem="gbb-Lr-GbN" firstAttribute="top" secondItem="yws-ef-mxV" secondAttribute="top" id="lcA-DL-aCJ"/>
-                                    <constraint firstItem="gbb-Lr-GbN" firstAttribute="height" secondItem="yws-ef-mxV" secondAttribute="height" id="oA6-X1-rxA"/>
+                                    <constraint firstItem="gbb-Lr-GbN" firstAttribute="width" secondItem="yws-ef-mxV" secondAttribute="width" id="M6M-fX-q4M"/>
+                                    <constraint firstItem="gbb-Lr-GbN" firstAttribute="height" secondItem="yws-ef-mxV" secondAttribute="height" id="aA1-1N-L8t"/>
+                                    <constraint firstItem="gbb-Lr-GbN" firstAttribute="top" secondItem="yws-ef-mxV" secondAttribute="top" id="hvt-5u-tSm"/>
+                                    <constraint firstItem="gbb-Lr-GbN" firstAttribute="leading" secondItem="yws-ef-mxV" secondAttribute="leading" id="yIj-yu-pBT"/>
                                 </constraints>
                             </view>
                             <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0g-6f-ZE9">
@@ -346,25 +331,25 @@
                                 </subviews>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yws-ef-mxV" firstAttribute="top" secondItem="h0g-6f-ZE9" secondAttribute="top" id="3Kr-Zf-2b7"/>
+                            <constraint firstItem="yws-ef-mxV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="6Yw-Do-2hw"/>
+                            <constraint firstItem="h0g-6f-ZE9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="B6X-Pn-5sl"/>
                             <constraint firstItem="BiE-dA-M3k" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="GE9-91-zU6"/>
-                            <constraint firstItem="yws-ef-mxV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Kvw-6E-uiZ"/>
-                            <constraint firstItem="yws-ef-mxV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="O5H-Nb-UmO"/>
-                            <constraint firstItem="yws-ef-mxV" firstAttribute="top" secondItem="Fow-Q1-t9y" secondAttribute="top" id="OAL-sy-7EM"/>
-                            <constraint firstItem="yws-ef-mxV" firstAttribute="leading" secondItem="h0g-6f-ZE9" secondAttribute="leading" id="RTW-AU-1cR"/>
-                            <constraint firstItem="yws-ef-mxV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="VR2-1l-12H"/>
-                            <constraint firstItem="yws-ef-mxV" firstAttribute="bottom" secondItem="h0g-6f-ZE9" secondAttribute="bottom" id="Ygo-SV-X73"/>
-                            <constraint firstItem="yws-ef-mxV" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="atY-NM-Yf3"/>
+                            <constraint firstItem="Fow-Q1-t9y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HAu-9q-7jo"/>
+                            <constraint firstItem="yws-ef-mxV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="OoB-fW-Rjm"/>
+                            <constraint firstItem="Fow-Q1-t9y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OpI-fx-c6g"/>
+                            <constraint firstItem="Fow-Q1-t9y" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Qqk-td-RaH"/>
+                            <constraint firstItem="h0g-6f-ZE9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Vy1-si-f1B"/>
+                            <constraint firstItem="yws-ef-mxV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="czn-BT-ABj"/>
                             <constraint firstItem="BiE-dA-M3k" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="2" constant="-216" id="f3w-eW-vc7"/>
-                            <constraint firstItem="yws-ef-mxV" firstAttribute="trailing" secondItem="h0g-6f-ZE9" secondAttribute="trailing" id="gEg-Bw-xIu"/>
-                            <constraint firstItem="Fow-Q1-t9y" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="lLb-dc-Ppe"/>
-                            <constraint firstItem="Fow-Q1-t9y" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="qdN-ah-2UO"/>
-                            <constraint firstItem="yws-ef-mxV" firstAttribute="leading" secondItem="Fow-Q1-t9y" secondAttribute="leading" id="ukV-y4-MrQ"/>
+                            <constraint firstItem="h0g-6f-ZE9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="qDn-qf-Gxi"/>
+                            <constraint firstItem="h0g-6f-ZE9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qOH-jF-S1A"/>
+                            <constraint firstItem="Fow-Q1-t9y" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="uKn-xT-Uy2"/>
+                            <constraint firstItem="yws-ef-mxV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="yRs-8y-SvN"/>
                         </constraints>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="blurContainer" destination="yws-ef-mxV" id="sgE-f9-lcZ"/>
@@ -374,12 +359,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="530.5" y="303.5"/>
+            <point key="canvasLocation" x="784.5" y="367.5"/>
+        </scene>
+        <!--Paged View Controller-->
+        <scene sceneID="vm8-RU-jWl">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="T2S-ed-9jR" customClass="PagedViewController" customModule="SocialWeatherTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O9d-8t-Jsr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-31.5" y="367.5"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="Ax5-gy-Bdr">
             <objects>
-                <viewController id="51o-oL-90y" customClass="CameraViewController" customModule="SocialWeatherTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraViewController" id="51o-oL-90y" customClass="CameraViewController" customModule="SocialWeatherTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wtB-fl-LTm"/>
                         <viewControllerLayoutGuide type="bottom" id="168-1M-KjO"/>
@@ -503,7 +499,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhL-gh-idP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="530.5" y="1079.5"/>
+            <point key="canvasLocation" x="380.5" y="1175.5"/>
         </scene>
     </scenes>
     <resources>
