@@ -12,6 +12,8 @@ import AVFoundation
 class CameraViewController : DismissableViewController {
     
     @IBOutlet weak var previewView: UIView!
+    @IBOutlet weak var switchButton: UIButton!
+    @IBOutlet weak var picture: UIImageView!
     
     // Set up a new AVCaptureSession instance
     let session = AVCaptureSession()
@@ -27,14 +29,16 @@ class CameraViewController : DismissableViewController {
     var currentCamera : AVCaptureDevice?
     var currentDevice = -1
     var currentInput : AVCaptureInput?
+    var currentPreview = AVCaptureVideoPreviewLayer()
+    var currentStep = 0
+    let shutter = AVCaptureStillImageOutput()
     
     // MARK: - View setup
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        // Add a gesture recognizer for dismissing the view
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(self.handleDismissablePanGesture(_:)))
         self.view.addGestureRecognizer(gesture)
         
@@ -47,14 +51,21 @@ class CameraViewController : DismissableViewController {
         // Create a new capture session in order to interact with the device cameras
         self.session.sessionPreset = AVCaptureSessionPresetHigh
         
+        // Create a new StillImageOutput object in order to be able to capture an image
+        self.shutter.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
+        self.session.addOutput(shutter)
+        
         // Set up a preview layer
-        let previewLayer = AVCaptureVideoPreviewLayer(session: self.session)
-        previewLayer.frame = self.view.layer.frame
-        self.previewView.layer.addSublayer(previewLayer)
+        self.currentPreview.session = self.session
+        self.currentPreview.frame = self.view.layer.frame
+        self.previewView.layer.addSublayer(self.currentPreview)
         self.session.startRunning()
         
         // Switch to the first camera
         self.switchCameras()
+        
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        self.view.addGestureRecognizer(gesture2)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -102,6 +113,30 @@ class CameraViewController : DismissableViewController {
         catch _ {
             NSLog("Could not set up a new camera")
         }
+    }
+    
+    func handleTap(action: AnyObject!) {
+        // Make sure to be in the very first step of taking a photo
+        guard self.currentStep == 0 else { return }
+        self.currentStep = 1
+        
+        // Try to safely get the output connection
+        if(self.shutter.connections.count != 1) { return }
+        guard let connection = self.shutter.connections[0] as? AVCaptureConnection else { return }
+        
+        // Now capture whatever is on that connection as an image
+        self.shutter.captureStillImageAsynchronouslyFromConnection(connection) { (buffer: CMSampleBuffer!, error: NSError!) in
+            let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer)
+            let image = UIImage(data: imageData)
+            
+            // And display it to the user
+            self.picture.image = image
+            self.picture.hidden = false
+        }
+        
+        // Hide layers that we do not need now
+        self.currentPreview.hidden = true
+        self.switchButton.hidden = true
     }
     
 }

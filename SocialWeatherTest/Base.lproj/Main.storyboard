@@ -20,36 +20,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="54Z-0f-BGF" userLabel="Background container">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="IMG_0003.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="ADb-LJ-jr8">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pd6-vI-deB">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                        <subviews>
-                                            <visualEffectView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PI9-E9-nZS">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="Cjw-HE-y4c">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </view>
-                                                <blurEffect style="dark"/>
-                                            </visualEffectView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="PI9-E9-nZS" firstAttribute="width" secondItem="Pd6-vI-deB" secondAttribute="width" id="M58-Jv-cfi"/>
-                                            <constraint firstItem="PI9-E9-nZS" firstAttribute="height" secondItem="Pd6-vI-deB" secondAttribute="height" id="RHJ-y3-aRZ"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="Pd6-vI-deB" firstAttribute="width" secondItem="54Z-0f-BGF" secondAttribute="width" id="5jS-fc-q0Z"/>
-                                    <constraint firstItem="ADb-LJ-jr8" firstAttribute="height" secondItem="54Z-0f-BGF" secondAttribute="height" id="Idx-ad-bZU"/>
-                                    <constraint firstItem="Pd6-vI-deB" firstAttribute="height" secondItem="54Z-0f-BGF" secondAttribute="height" id="YJ4-CP-dhF"/>
-                                    <constraint firstItem="ADb-LJ-jr8" firstAttribute="width" secondItem="54Z-0f-BGF" secondAttribute="width" id="p5E-Go-SGT"/>
-                                </constraints>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fev-hM-lZ5" userLabel="Navigation">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -421,6 +392,9 @@
                                 <rect key="frame" x="0.0" y="-30" width="375" height="727"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="moo-69-g7V">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frk-6m-7vW">
                                 <rect key="frame" x="311" y="11" width="58" height="47"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -505,20 +479,26 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="168-1M-KjO" firstAttribute="top" secondItem="0hW-GE-1vP" secondAttribute="bottom" id="4XK-D6-pA7"/>
+                            <constraint firstItem="moo-69-g7V" firstAttribute="leading" secondItem="Q2f-sf-PqY" secondAttribute="leading" id="78g-Sl-z4y"/>
                             <constraint firstAttribute="trailing" secondItem="mMk-Bj-yaL" secondAttribute="trailing" id="7Pn-lq-r1j"/>
+                            <constraint firstItem="moo-69-g7V" firstAttribute="top" secondItem="wtB-fl-LTm" secondAttribute="bottom" id="CYm-Y9-NEq"/>
                             <constraint firstItem="168-1M-KjO" firstAttribute="top" secondItem="mMk-Bj-yaL" secondAttribute="bottom" constant="-30" id="JSh-xZ-TMD"/>
+                            <constraint firstAttribute="trailing" secondItem="moo-69-g7V" secondAttribute="trailing" id="POz-cE-RGc"/>
                             <constraint firstAttribute="trailing" secondItem="0hW-GE-1vP" secondAttribute="trailing" id="RPD-Hy-9vf"/>
                             <constraint firstAttribute="trailing" secondItem="frk-6m-7vW" secondAttribute="trailing" constant="6" id="SzT-u9-iqI"/>
                             <constraint firstItem="mMk-Bj-yaL" firstAttribute="top" secondItem="wtB-fl-LTm" secondAttribute="bottom" constant="-30" id="dhI-03-cTS"/>
                             <constraint firstItem="0hW-GE-1vP" firstAttribute="leading" secondItem="Q2f-sf-PqY" secondAttribute="leading" id="get-Vt-hZw"/>
                             <constraint firstItem="frk-6m-7vW" firstAttribute="top" secondItem="wtB-fl-LTm" secondAttribute="bottom" constant="11" id="vpE-sy-E6C"/>
+                            <constraint firstItem="168-1M-KjO" firstAttribute="top" secondItem="moo-69-g7V" secondAttribute="bottom" id="xXC-nm-R1z"/>
                             <constraint firstItem="mMk-Bj-yaL" firstAttribute="leading" secondItem="Q2f-sf-PqY" secondAttribute="leading" id="xdY-Tj-3Lg"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="picture" destination="moo-69-g7V" id="sEB-Od-9YE"/>
                         <outlet property="previewView" destination="mMk-Bj-yaL" id="t7h-rF-h31"/>
+                        <outlet property="switchButton" destination="frk-6m-7vW" id="Ok2-eM-4HV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhL-gh-idP" userLabel="First Responder" sceneMemberID="firstResponder"/>
