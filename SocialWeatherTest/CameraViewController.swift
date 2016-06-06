@@ -15,6 +15,8 @@ class CameraViewController : DismissableViewController {
     @IBOutlet weak var switchButton: UIButton!
     @IBOutlet weak var picture: UIImageView!
     
+    @IBOutlet weak var weatherScrollView: UIScrollView!
+    
     // Set up a new AVCaptureSession instance
     let session = AVCaptureSession()
     
@@ -90,7 +92,7 @@ class CameraViewController : DismissableViewController {
     @IBAction func switchCameras() -> Void {
         // Get the next camera index
         var nextCamera = self.currentDevice + 1
-        if nextCamera == devices.count {
+        if nextCamera >= devices.count {
             nextCamera = 0
         }
         
