@@ -11,7 +11,6 @@ import UIKit
 
 class PagedViewController : UIPageViewController, UIPageViewControllerDataSource {
     
-    var currentIndex = 0
     var data = [["temp": 20], ["temp": 20], ["temp": 20], ["temp": 20], ["temp": 20], ["temp": 20]]
     let introController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("IntroViewController")
     
@@ -22,6 +21,7 @@ class PagedViewController : UIPageViewController, UIPageViewControllerDataSource
         self.dataSource = self
         
         // Set up the intro view controller. Other view controllers will get added dynamically through the delegate
+        self.introController.view.tag = 0
         setViewControllers([self.introController],
                            direction: .Forward,
                            animated: true,
@@ -40,34 +40,22 @@ class PagedViewController : UIPageViewController, UIPageViewControllerDataSource
         
         // Pass the retrieved data to that controller
         controller.data = nextData
+        controller.view.tag = index
         
         // Return the controller
         return controller
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        NSLog("Next")
-        
         // Return the next controller
-        let controller = self.controllerForIndex(self.currentIndex + 1)
-        if controller != nil {
-            self.currentIndex = self.currentIndex + 1
-        }
-        return controller
+        return self.controllerForIndex(viewController.view.tag + 1)
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        // Return the IntroViewController if we're at page 0
-        if self.currentIndex - 1 == 0 {
-            self.currentIndex = self.currentIndex - 1
-            return self.introController
-        }
-        
-        // ... otherwise fetch the previous controller
-        let controller = self.controllerForIndex(self.currentIndex - 1)
-        if controller != nil {
-            self.currentIndex = self.currentIndex - 1
-        }
-        return controller
+        // Return the IntroViewController if we're at page 0, otherwise fetch the previous controller
+        return viewController.view.tag - 1 == 0
+            ? self.introController
+            : self.controllerForIndex(viewController.view.tag - 1)
     }
+    
 }
