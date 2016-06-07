@@ -417,7 +417,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hW-GE-1vP">
                                 <rect key="frame" x="0.0" y="451" width="375" height="216"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24º" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNC-Ff-1BJ">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24º" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNC-Ff-1BJ">
                                         <rect key="frame" x="23" y="52" width="329" height="88"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="88" id="5rJ-Ah-ayJ"/>
@@ -447,7 +447,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="To6-VA-Wna">
+                                    <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="To6-VA-Wna">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8e-aN-RBF">
@@ -669,6 +669,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="labelTemperature" destination="MNC-Ff-1BJ" id="VQJ-zH-mZg"/>
                         <outlet property="picture" destination="moo-69-g7V" id="sEB-Od-9YE"/>
                         <outlet property="previewView" destination="mMk-Bj-yaL" id="t7h-rF-h31"/>
                         <outlet property="switchButton" destination="frk-6m-7vW" id="Ok2-eM-4HV"/>
