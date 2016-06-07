@@ -22,6 +22,17 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need to get your approximate location in order to make a new post</string>
+	<key>NSLocationUsageDescription</key>
+	<string>We need to get your approximate location in order to make a new post</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need to get your approximate location in order to make a new post</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

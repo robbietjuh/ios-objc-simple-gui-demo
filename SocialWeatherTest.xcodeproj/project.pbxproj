@@ -27,6 +27,8 @@
 		E1363B7A1D02705F00111971 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1363B791D02705F00111971 /* Interactor.swift */; };
 		E1363B7C1D02707500111971 /* DismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1363B7B1D02707500111971 /* DismissAnimator.swift */; };
 		E1363B801D033A0600111971 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1363B7F1D033A0600111971 /* CameraViewController.swift */; };
+		E13D610E1D0770690022FB81 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13D610D1D0770690022FB81 /* CoreLocation.framework */; };
+		E13D61121D0777F30022FB81 /* OWMApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D61111D0777F30022FB81 /* OWMApiClient.swift */; };
 		E1E3707E1D0390D50072135C /* switch-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E3707D1D0390D50072135C /* switch-camera.png */; };
 		E1E370801D0395A80072135C /* DismissableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3707F1D0395A80072135C /* DismissableViewController.swift */; };
 		E9876C5F93209E0CCEE1BE2D /* Pods_SocialWeatherTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF93A1A8682568D4F2B1F78 /* Pods_SocialWeatherTest.framework */; };
@@ -83,6 +85,8 @@
 		E1363B791D02705F00111971 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		E1363B7B1D02707500111971 /* DismissAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissAnimator.swift; sourceTree = "<group>"; };
 		E1363B7F1D033A0600111971 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		E13D610D1D0770690022FB81 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E13D61111D0777F30022FB81 /* OWMApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMApiClient.swift; sourceTree = "<group>"; };
 		E1E3707D1D0390D50072135C /* switch-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch-camera.png"; sourceTree = "<group>"; };
 		E1E3707F1D0395A80072135C /* DismissableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13D610E1D0770690022FB81 /* CoreLocation.framework in Frameworks */,
 				E9876C5F93209E0CCEE1BE2D /* Pods_SocialWeatherTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +136,7 @@
 		DB11F936F9DA6560BD0E727E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E13D610D1D0770690022FB81 /* CoreLocation.framework */,
 				8EF93A1A8682568D4F2B1F78 /* Pods_SocialWeatherTest.framework */,
 				70B141A40D9222C12E6E4431 /* Pods_SocialWeatherTestTests.framework */,
 				66576449D0F8B31C75EA61A3 /* Pods_SocialWeatherTestUITests.framework */,
@@ -220,12 +226,29 @@
 		E1363B7E1D027B0B00111971 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				E1363B791D02705F00111971 /* Interactor.swift */,
-				E1363B7B1D02707500111971 /* DismissAnimator.swift */,
-				E1E3707F1D0395A80072135C /* DismissableViewController.swift */,
+				E13D61101D0770A00022FB81 /* OpenWeatherMap */,
+				E13D610F1D07708D0022FB81 /* Dismissables */,
 				E1169DCD1D0486BA001C0B62 /* CollectionType.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		E13D610F1D07708D0022FB81 /* Dismissables */ = {
+			isa = PBXGroup;
+			children = (
+				E1E3707F1D0395A80072135C /* DismissableViewController.swift */,
+				E1363B7B1D02707500111971 /* DismissAnimator.swift */,
+				E1363B791D02705F00111971 /* Interactor.swift */,
+			);
+			name = Dismissables;
+			sourceTree = "<group>";
+		};
+		E13D61101D0770A00022FB81 /* OpenWeatherMap */ = {
+			isa = PBXGroup;
+			children = (
+				E13D61111D0777F30022FB81 /* OWMApiClient.swift */,
+			);
+			name = OpenWeatherMap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,6 +522,7 @@
 				E1363B801D033A0600111971 /* CameraViewController.swift in Sources */,
 				E1363B761D02631800111971 /* AppDelegate.swift in Sources */,
 				E1E370801D0395A80072135C /* DismissableViewController.swift in Sources */,
+				E13D61121D0777F30022FB81 /* OWMApiClient.swift in Sources */,
 				E1363B781D026EBC00111971 /* IntroViewController.swift in Sources */,
 				E1169DCC1D048071001C0B62 /* PagedViewController.swift in Sources */,
 				E1169DCE1D0486BA001C0B62 /* CollectionType.swift in Sources */,
