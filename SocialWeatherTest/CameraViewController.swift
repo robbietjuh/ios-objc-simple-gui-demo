@@ -8,14 +8,20 @@
 
 import UIKit
 import AVFoundation
+import CoreLocation
 
-class CameraViewController : DismissableViewController {
+class CameraViewController : DismissableViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var switchButton: UIButton!
     @IBOutlet weak var picture: UIImageView!
     
     @IBOutlet weak var weatherScrollView: UIScrollView!
+    @IBOutlet weak var labelTemperature: UILabel!
+    
+    // Initialize a location manager for GPS coords
+    let locationManager = CLLocationManager()
+    
     
     // Set up a new AVCaptureSession instance
     let session = AVCaptureSession()
@@ -40,11 +46,6 @@ class CameraViewController : DismissableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Add a gesture recognizer for dismissing the view
-        let gesture = UIPanGestureRecognizer(target: self, action: #selector(self.handleDismissablePanGesture(_:)))
-        self.view.addGestureRecognizer(gesture)
-        
-        
         // First, make sure we actually have access to capture devices
         guard self.devices.count > 0 else {
             return
@@ -66,13 +67,18 @@ class CameraViewController : DismissableViewController {
         // Switch to the first camera
         self.switchCameras()
         
+        // Add a gesture recognizer for dismissing the view
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(self.handleDismissablePanGesture(_:)))
+        self.view.addGestureRecognizer(gesture)
+        
+        // Set up a gesture recognizer for making a photo
         let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         self.view.addGestureRecognizer(gesture2)
     }
     
     override func viewDidAppear(animated: Bool) {
         // We'll have to take care of privacy settings, so let's check wether any devices were found
-        guard self.devices.count > 0 else {
+        guard self.devices.count == 0 else {
             let alert = UIAlertController(title: "No camera found",
                                           message: "We could not get access to a camera. Please check your privacy settings in the Settings app.",
                                           preferredStyle: .Alert)
@@ -84,6 +90,51 @@ class CameraViewController : DismissableViewController {
             self.presentViewController(alert, animated: false, completion: nil)
             
             return
+        }
+        
+        // Get the current location. We cant' do this in the viewDidLoad method because of the way
+        // permissions are handled by the location manager. We can adjust for privacy settings in the
+        // didFailWithError method as listed way below this file.
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    // MARK: - GPS location handlers
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        // Something went wrong, probs because of privacy issues
+        let alert = UIAlertController(title: "Location issues",
+                                      message: "We could not get your current location. Please check your privacy settings in the Settings app.",
+                                      preferredStyle: .Alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {(alert) in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        
+        self.presentViewController(alert, animated: false, completion: nil)
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+        self.locationManager.stopUpdatingLocation()
+        OWMApiClient.currentWeatherByCoordinates(newLocation.coordinate, success: { (name, temp) in
+            self.labelTemperature.text = "\(temp)°"
+            self.labelTemperature.hidden = false
+            self.labelTemperature.alpha = 1
+        }) { (errorMessage) in
+            let alert = UIAlertController(title: "Location issues",
+                                          message: "We could not get the weather for your current location. \(errorMessage)",
+                                          preferredStyle: .Alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {(alert) in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }))
+            
+            self.presentViewController(alert, animated: false, completion: nil)
         }
     }
     
@@ -97,7 +148,7 @@ class CameraViewController : DismissableViewController {
         }
         
         // Request the camera instance from our devices array
-        guard let camera = devices[nextCamera] as? AVCaptureDevice else {
+        guard let camera = devices[safe: nextCamera] as? AVCaptureDevice else {
             return
         }
         
