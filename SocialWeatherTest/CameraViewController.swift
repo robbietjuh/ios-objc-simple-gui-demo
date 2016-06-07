@@ -84,17 +84,7 @@ class CameraViewController : DismissableViewController, CLLocationManagerDelegat
     override func viewDidAppear(animated: Bool) {
         // We'll have to take care of privacy settings, so let's check wether any devices were found
         guard self.devices.count == 0 else {
-            let alert = UIAlertController(title: "No camera found",
-                                          message: "We could not get access to a camera. Please check your privacy settings in the Settings app.",
-                                          preferredStyle: .Alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {(alert) in
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }))
-            
-            self.presentViewController(alert, animated: false, completion: nil)
-            
-            return
+            return self.dismissViewControllerWithMessage("No camera found", message: "We could not get access to a camera. Please check your privacy settings in the Settings app.")
         }
         
         // Get the current location. We cant' do this in the viewDidLoad method because of the way
@@ -109,19 +99,23 @@ class CameraViewController : DismissableViewController, CLLocationManagerDelegat
         }
     }
     
-    // MARK: - GPS location handlers
-    
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        // Something went wrong, probs because of privacy issues
-        let alert = UIAlertController(title: "Location issues",
-                                      message: "We could not get your current location. Please check your privacy settings in the Settings app.",
+    func dismissViewControllerWithMessage(title: String, message: String) {
+        let alert = UIAlertController(title: title,
+                                      message: message,
                                       preferredStyle: .Alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {(alert) in
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (alert) in
             self.dismissViewControllerAnimated(true, completion: nil)
         }))
         
         self.presentViewController(alert, animated: false, completion: nil)
+    }
+    
+    // MARK: - GPS location handlers
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        // Something went wrong, probs because of privacy issues
+        self.dismissViewControllerWithMessage("Location issues", message: "We could not get your current location. Please check your privacy settings in the Settings app.")
     }
     
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
@@ -144,15 +138,7 @@ class CameraViewController : DismissableViewController, CLLocationManagerDelegat
                 self.weatherScrollView.alpha = 1
             })
         }) { (errorMessage) in
-            let alert = UIAlertController(title: "Location issues",
-                                          message: "We could not get the weather for your current location. \(errorMessage)",
-                                          preferredStyle: .Alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {(alert) in
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }))
-            
-            self.presentViewController(alert, animated: false, completion: nil)
+            self.dismissViewControllerWithMessage("Location issues", message: "We could not get the weather for your current location. \(errorMessage)")
         }
     }
     
