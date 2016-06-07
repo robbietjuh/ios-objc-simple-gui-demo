@@ -18,6 +18,11 @@ class CameraViewController : DismissableViewController, CLLocationManagerDelegat
     
     @IBOutlet weak var weatherScrollView: UIScrollView!
     @IBOutlet weak var labelTemperature: UILabel!
+    @IBOutlet weak var labelConditionsSunny: UILabel!
+    @IBOutlet weak var labelConditionsCloudy: UILabel!
+    @IBOutlet weak var labelConditionsRainy: UILabel!
+    @IBOutlet weak var labelConditionsFoggy: UILabel!
+    @IBOutlet weak var labelConditionsThunder: UILabel!
     
     // Initialize a location manager for GPS coords
     let locationManager = CLLocationManager()
@@ -120,11 +125,24 @@ class CameraViewController : DismissableViewController, CLLocationManagerDelegat
     }
     
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+        // Stop updating the location
         self.locationManager.stopUpdatingLocation()
-        OWMApiClient.currentWeatherByCoordinates(newLocation.coordinate, success: { (name, temp) in
+        
+        // Get the current weather
+        OWMApiClient.currentWeatherByCoordinates(newLocation.coordinate, success: { (city, temp) in
+            // Put the city and weather details into the views
+            self.labelConditionsSunny.text = "Sunny \(city)".uppercaseString
+            self.labelConditionsCloudy.text = "Cloudy \(city)".uppercaseString
+            self.labelConditionsRainy.text = "Rainy \(city)".uppercaseString
+            self.labelConditionsFoggy.text = "Foggy \(city)".uppercaseString
+            self.labelConditionsThunder.text = "Thundering \(city)".uppercaseString
             self.labelTemperature.text = "\(temp)°"
-            self.labelTemperature.hidden = false
-            self.labelTemperature.alpha = 1
+            
+            // Show the views
+            UIView.animateWithDuration(0.6, animations: {
+                self.labelTemperature.alpha = 1
+                self.weatherScrollView.alpha = 1
+            })
         }) { (errorMessage) in
             let alert = UIAlertController(title: "Location issues",
                                           message: "We could not get the weather for your current location. \(errorMessage)",
