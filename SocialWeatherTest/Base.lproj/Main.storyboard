@@ -465,7 +465,7 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunny-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="6q0-hD-Ajl">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SunnyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="6q0-hD-Ajl">
                                                                 <rect key="frame" x="18" y="16" width="40" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="40" id="Mme-gC-TGX"/>
@@ -494,7 +494,7 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunny-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="YqF-6N-tPt">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CloudyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="YqF-6N-tPt">
                                                                 <rect key="frame" x="18" y="16" width="40" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="40" id="UYd-TI-S9s"/>
@@ -523,7 +523,7 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunny-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="v2C-OH-xiI">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RainyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="v2C-OH-xiI">
                                                                 <rect key="frame" x="18" y="16" width="40" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="IAK-5g-Rei"/>
@@ -552,7 +552,7 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunny-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="swS-6o-LyM">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoggyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="swS-6o-LyM">
                                                                 <rect key="frame" x="18" y="16" width="40" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="5hj-FB-W8J"/>
@@ -581,7 +581,7 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunny-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="DoC-ab-OLY">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ThunderIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DoC-ab-OLY">
                                                                 <rect key="frame" x="18" y="16" width="40" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="40" id="KAb-g3-A56"/>
@@ -687,7 +687,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CloudyIcon" width="30" height="30"/>
+        <image name="FoggyIcon" width="30" height="30"/>
         <image name="IMG_0003.JPG" width="716" height="954"/>
+        <image name="RainyIcon" width="30" height="30"/>
+        <image name="SunnyIcon" width="30" height="30"/>
+        <image name="ThunderIcon" width="30" height="30"/>
         <image name="avatar-phil-schiller.png" width="400" height="400"/>
         <image name="heart-icon.png" width="512" height="512"/>
         <image name="sunny-icon.png" width="56" height="56"/>
