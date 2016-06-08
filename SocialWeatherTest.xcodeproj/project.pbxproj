@@ -19,7 +19,6 @@
 		E1363B1D1CFF633D00111971 /* IMG_0003.JPG in Resources */ = {isa = PBXBuildFile; fileRef = E1363B1C1CFF633D00111971 /* IMG_0003.JPG */; };
 		E1363B211CFF659C00111971 /* avatar-phil-schiller.png in Resources */ = {isa = PBXBuildFile; fileRef = E1363B201CFF659C00111971 /* avatar-phil-schiller.png */; };
 		E1363B231CFF66E100111971 /* heart-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E1363B221CFF66E100111971 /* heart-icon.png */; };
-		E1363B251CFF686800111971 /* sunny-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E1363B241CFF686800111971 /* sunny-icon.png */; };
 		E1363B271CFFD39000111971 /* round-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = E1363B261CFFD39000111971 /* round-profile.png */; };
 		E1363B381D025FD400111971 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1363B371D025FD400111971 /* PhotoViewController.swift */; };
 		E1363B761D02631800111971 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1363B751D02631800111971 /* AppDelegate.swift */; };
@@ -29,7 +28,6 @@
 		E1363B801D033A0600111971 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1363B7F1D033A0600111971 /* CameraViewController.swift */; };
 		E13D610E1D0770690022FB81 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13D610D1D0770690022FB81 /* CoreLocation.framework */; };
 		E13D61121D0777F30022FB81 /* OWMApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D61111D0777F30022FB81 /* OWMApiClient.swift */; };
-		E1E3707E1D0390D50072135C /* switch-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E3707D1D0390D50072135C /* switch-camera.png */; };
 		E1E370801D0395A80072135C /* DismissableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3707F1D0395A80072135C /* DismissableViewController.swift */; };
 		E9876C5F93209E0CCEE1BE2D /* Pods_SocialWeatherTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF93A1A8682568D4F2B1F78 /* Pods_SocialWeatherTest.framework */; };
 /* End PBXBuildFile section */
@@ -77,7 +75,6 @@
 		E1363B1C1CFF633D00111971 /* IMG_0003.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0003.JPG; sourceTree = "<group>"; };
 		E1363B201CFF659C00111971 /* avatar-phil-schiller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar-phil-schiller.png"; sourceTree = "<group>"; };
 		E1363B221CFF66E100111971 /* heart-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-icon.png"; sourceTree = "<group>"; };
-		E1363B241CFF686800111971 /* sunny-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sunny-icon.png"; sourceTree = "<group>"; };
 		E1363B261CFFD39000111971 /* round-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "round-profile.png"; sourceTree = "<group>"; };
 		E1363B371D025FD400111971 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		E1363B751D02631800111971 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +84,6 @@
 		E1363B7F1D033A0600111971 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		E13D610D1D0770690022FB81 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E13D61111D0777F30022FB81 /* OWMApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OWMApiClient.swift; sourceTree = "<group>"; };
-		E1E3707D1D0390D50072135C /* switch-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch-camera.png"; sourceTree = "<group>"; };
 		E1E3707F1D0395A80072135C /* DismissableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,10 +180,8 @@
 		E1363AE71CFF626500111971 /* Mockup Files */ = {
 			isa = PBXGroup;
 			children = (
-				E1E3707D1D0390D50072135C /* switch-camera.png */,
 				E1363B261CFFD39000111971 /* round-profile.png */,
 				E1363B1C1CFF633D00111971 /* IMG_0003.JPG */,
-				E1363B241CFF686800111971 /* sunny-icon.png */,
 				E1363B201CFF659C00111971 /* avatar-phil-schiller.png */,
 				E1363B221CFF66E100111971 /* heart-icon.png */,
 			);
@@ -363,13 +357,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1E3707E1D0390D50072135C /* switch-camera.png in Resources */,
 				E1363B211CFF659C00111971 /* avatar-phil-schiller.png in Resources */,
 				E1363AF71CFF626500111971 /* LaunchScreen.storyboard in Resources */,
 				E1363B271CFFD39000111971 /* round-profile.png in Resources */,
 				E1363B231CFF66E100111971 /* heart-icon.png in Resources */,
 				E1363AF41CFF626500111971 /* Assets.xcassets in Resources */,
-				E1363B251CFF686800111971 /* sunny-icon.png in Resources */,
 				E1363B1D1CFF633D00111971 /* IMG_0003.JPG in Resources */,
 				E1363AF21CFF626500111971 /* Main.storyboard in Resources */,
 			);
