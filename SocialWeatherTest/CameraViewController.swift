@@ -100,6 +100,7 @@ class CameraViewController : DismissableViewController, CLLocationManagerDelegat
     }
     
     func dismissViewControllerWithMessage(title: String, message: String) {
+        NSLog(message)
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .Alert)
@@ -115,6 +116,7 @@ class CameraViewController : DismissableViewController, CLLocationManagerDelegat
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         // Something went wrong, probs because of privacy issues
+        self.locationManager.delegate = nil
         self.dismissViewControllerWithMessage("Location issues", message: "We could not get your current location. Please check your privacy settings in the Settings app.")
     }
     
