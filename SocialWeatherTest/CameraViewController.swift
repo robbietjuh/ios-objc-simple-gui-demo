@@ -100,7 +100,6 @@ class CameraViewController : DismissableViewController, CLLocationManagerDelegat
     }
     
     func dismissViewControllerWithMessage(title: String, message: String) {
-        NSLog(message)
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .Alert)
