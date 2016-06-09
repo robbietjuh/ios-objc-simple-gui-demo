@@ -395,7 +395,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZyW-ba-cz3" userLabel="Demo phone">
-                                <rect key="frame" x="10" y="665" width="355" height="507"/>
+                                <rect key="frame" x="10" y="2020" width="355" height="507"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PhoneLeft" translatesAutoresizingMaskIntoConstraints="NO" id="zmX-6h-g9n">
                                         <rect key="frame" x="0.0" y="0.0" width="213" height="507"/>
@@ -451,7 +451,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="trc-zd-9EM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uqj-6q-QIo">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqj-6q-QIo">
                                         <rect key="frame" x="0.0" y="0.0" width="1875" height="667"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbF-oF-vf3">
@@ -478,7 +478,7 @@
                                                     <segue destination="2FG-M7-UJZ" kind="embed" id="Ami-nT-aIc"/>
                                                 </connections>
                                             </containerView>
-                                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fe8-FF-nwt">
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fe8-FF-nwt">
                                                 <rect key="frame" x="1500" y="0.0" width="375" height="667"/>
                                                 <connections>
                                                     <segue destination="CJT-n0-blF" kind="embed" id="Owy-I1-EnD"/>
@@ -515,7 +515,7 @@
                             <constraint firstItem="ZyW-ba-cz3" firstAttribute="height" secondItem="iZ9-1C-3YE" secondAttribute="height" constant="-160" id="L8c-wk-JMZ"/>
                             <constraint firstItem="trc-zd-9EM" firstAttribute="centerX" secondItem="ZyW-ba-cz3" secondAttribute="centerX" id="Ylk-cB-pXF"/>
                             <constraint firstItem="trc-zd-9EM" firstAttribute="bottom" secondItem="X7a-fQ-a6y" secondAttribute="top" id="b7C-3q-rKe"/>
-                            <constraint firstItem="ZyW-ba-cz3" firstAttribute="top" secondItem="Dqa-tV-uAo" secondAttribute="bottom" constant="645" id="er2-8a-BNx"/>
+                            <constraint firstItem="ZyW-ba-cz3" firstAttribute="top" secondItem="Dqa-tV-uAo" secondAttribute="bottom" constant="2000" id="er2-8a-BNx"/>
                             <constraint firstAttribute="trailing" secondItem="ZyW-ba-cz3" secondAttribute="trailing" constant="10" id="wBI-uv-aju"/>
                             <constraint firstItem="trc-zd-9EM" firstAttribute="top" secondItem="iZ9-1C-3YE" secondAttribute="top" id="whv-eO-vAD"/>
                         </constraints>
@@ -1018,6 +1018,10 @@
         <scene sceneID="aCz-KU-Nzu">
             <objects>
                 <viewController id="2FG-M7-UJZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qdZ-Z5-PWx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ddi-r3-guR"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XeY-Z5-B6T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1066,6 +1070,10 @@
         <scene sceneID="p8n-MO-ZJn">
             <objects>
                 <viewController id="CJT-n0-blF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hvl-oX-3NP"/>
+                        <viewControllerLayoutGuide type="bottom" id="vgx-kY-qF5"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zNB-Uz-Lxl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
