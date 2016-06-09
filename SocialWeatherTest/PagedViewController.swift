@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class PagedViewController : UIPageViewController, UIPageViewControllerDataSource {
     
     var data = [["temp": 20], ["temp": 20], ["temp": 20], ["temp": 20], ["temp": 20], ["temp": 20]]
@@ -28,6 +27,13 @@ class PagedViewController : UIPageViewController, UIPageViewControllerDataSource
                            completion: nil)
         
         // TODO: Do something with self.data here (fetch the data asap, maybe use some locally cached stuff first)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        // Show the tutorial for the very first time. This should be moved
+        // to the loading view in the future
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TutorialViewController")
+        self.presentViewController(controller, animated: true, completion: nil)
     }
     
     func controllerForIndex(index: Int) -> UIViewController? {
