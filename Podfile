@@ -7,6 +7,7 @@ target 'SocialWeatherTest' do
 
   # Pods for SocialWeatherTest
   pod 'SwiftOpenWeatherMapAPI'
+  pod 'M13Checkbox'
 
   target 'SocialWeatherTestTests' do
     inherit! :search_paths

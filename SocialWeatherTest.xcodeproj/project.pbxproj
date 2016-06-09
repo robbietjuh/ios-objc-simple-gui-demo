@@ -320,7 +320,7 @@
 				TargetAttributes = {
 					E1363AE31CFF626500111971 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = EQT23S5KS9;
+						DevelopmentTeam = 7PBRCZ3B5M;
 					};
 					E1363AFC1CFF626500111971 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -667,7 +667,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SocialWeatherTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.robbytu.SocialWeather;
+				PRODUCT_BUNDLE_IDENTIFIER = net.robbytu.SocialWeather2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -685,7 +685,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SocialWeatherTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.robbytu.SocialWeather;
+				PRODUCT_BUNDLE_IDENTIFIER = net.robbytu.SocialWeather2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
