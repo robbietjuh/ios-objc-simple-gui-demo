@@ -39,17 +39,32 @@ class TutorialViewController : UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        // Calculate the new offset from the top
+        // Calculate the offset percentage in the X axis
         let offset = scrollView.contentOffset.x
         let offsetPercentage = offset / self.view.bounds.width
-        let offsetTop = self.view.bounds.height - (min(offsetPercentage, 1) * (self.view.bounds.height - 140))
-
-        self.phoneTopConstraint.constant = offsetTop
         
-        // Calculate wether or not to scroll through the comments
-        if offsetPercentage > 1 {
+        // Show the phone
+        if offsetPercentage <= 1 {
+            let offsetTop = self.view.bounds.height - (offsetPercentage * (self.view.bounds.height - 140))
+            self.phoneTopConstraint.constant = offsetTop
+        }
+        
+        // Scroll through the comments
+        if offsetPercentage > 1 && offsetPercentage <= 2 {
             let contentOffset = min(offsetPercentage - 1, 1) * self.demoController!.userDetailView.frame.origin.y
             self.demoController!.scrollView.contentOffset = CGPointMake(0, contentOffset)
+        }
+        
+        // Hide the comments
+        if offsetPercentage > 2 && offsetPercentage <= 3 {
+            let contentOffset = (1 - min(offsetPercentage - 2, 1)) * self.demoController!.userDetailView.frame.origin.y
+            self.demoController!.scrollView.contentOffset = CGPointMake(0,contentOffset)
+        }
+        
+        // Hide the phone
+        if offsetPercentage > 3 {
+            let offsetTop = ((offsetPercentage - 3) * (self.view.bounds.height - 140))
+            self.phoneTopConstraint.constant = 140 + offsetTop
         }
     }
     
