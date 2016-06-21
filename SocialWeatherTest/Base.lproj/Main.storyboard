@@ -1066,10 +1066,10 @@
             </objects>
             <point key="canvasLocation" x="1603.5" y="-484.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="p8n-MO-ZJn">
             <objects>
-                <viewController id="CJT-n0-blF" sceneMemberID="viewController">
+                <viewController id="CJT-n0-blF" customClass="LoginViewController" customModule="SocialWeatherTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hvl-oX-3NP"/>
                         <viewControllerLayoutGuide type="bottom" id="vgx-kY-qF5"/>
@@ -1078,39 +1078,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osu-bZ-f9D">
-                                <rect key="frame" x="169" y="28" width="39" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osu-bZ-f9D">
+                                <rect key="frame" x="164" y="28" width="47" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please login to lorem ipsum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kX-BO-ovh">
-                                <rect key="frame" x="82" y="114" width="210" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please login to start uploading your own content." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kX-BO-ovh">
+                                <rect key="frame" x="1" y="88" width="374" height="47"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlm-ha-Wru">
-                                <rect key="frame" x="136" y="366" width="102" height="30"/>
-                                <state key="normal" title="Skip for now">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mY8-Nm-AJz">
-                                <rect key="frame" x="20" y="272" width="335" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mY8-Nm-AJz">
+                                <rect key="frame" x="16" y="307" width="343" height="17"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="emailFieldChanged:" destination="CJT-n0-blF" eventType="editingChanged" id="R2S-rS-Iil"/>
+                                </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNq-0C-PJE">
-                                <rect key="frame" x="136" y="328" width="102" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNq-0C-PJE">
+                                <rect key="frame" x="137" y="340" width="102" height="30"/>
                                 <state key="normal" title="Continue">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ContinueButtonPressed:" destination="CJT-n0-blF" eventType="touchUpInside" id="m07-Ui-oiK"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NV1-J8-btH">
+                                <rect key="frame" x="20" y="404" width="335" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.93907298660000005" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlm-ha-Wru">
+                                <rect key="frame" x="137" y="378" width="102" height="30"/>
+                                <state key="normal" title="Skip for now">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1647058824" green="0.56470588239999997" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="tNq-0C-PJE" firstAttribute="leading" secondItem="zNB-Uz-Lxl" secondAttribute="leadingMargin" constant="117" id="4of-PA-L7Q"/>
+                            <constraint firstItem="mY8-Nm-AJz" firstAttribute="leading" secondItem="zNB-Uz-Lxl" secondAttribute="leadingMargin" id="7C6-6c-yNF"/>
+                            <constraint firstItem="osu-bZ-f9D" firstAttribute="leading" secondItem="zNB-Uz-Lxl" secondAttribute="leadingMargin" constant="148" id="C27-dJ-pTO"/>
+                            <constraint firstItem="tlm-ha-Wru" firstAttribute="leading" secondItem="zNB-Uz-Lxl" secondAttribute="leadingMargin" constant="117" id="Eul-xy-FO3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2kX-BO-ovh" secondAttribute="trailing" constant="20" id="IC6-1u-scn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="osu-bZ-f9D" secondAttribute="trailing" constant="148" id="NKS-v9-QCO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tNq-0C-PJE" secondAttribute="trailing" constant="116" id="RPf-Sw-GsZ"/>
+                            <constraint firstItem="tNq-0C-PJE" firstAttribute="top" secondItem="mY8-Nm-AJz" secondAttribute="bottom" constant="14" id="UXN-sI-Roz"/>
+                            <constraint firstItem="tlm-ha-Wru" firstAttribute="top" secondItem="tNq-0C-PJE" secondAttribute="bottom" constant="8" id="c0H-he-eVd"/>
+                            <constraint firstItem="mY8-Nm-AJz" firstAttribute="trailing" secondItem="zNB-Uz-Lxl" secondAttribute="trailingMargin" id="ce3-t5-Aic"/>
+                            <constraint firstItem="mY8-Nm-AJz" firstAttribute="top" secondItem="2kX-BO-ovh" secondAttribute="bottom" constant="150" id="et2-sj-1sR"/>
+                            <constraint firstItem="osu-bZ-f9D" firstAttribute="top" secondItem="hvl-oX-3NP" secondAttribute="bottom" constant="28" id="fJ4-oQ-Hla"/>
+                            <constraint firstItem="2kX-BO-ovh" firstAttribute="leading" secondItem="zNB-Uz-Lxl" secondAttribute="leadingMargin" constant="20" id="gZi-Zk-DPr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tlm-ha-Wru" secondAttribute="trailing" constant="116" id="t4p-cc-DkQ"/>
+                            <constraint firstItem="2kX-BO-ovh" firstAttribute="top" secondItem="osu-bZ-f9D" secondAttribute="bottom" constant="67" id="wp3-BY-hCK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="continueButton" destination="tNq-0C-PJE" id="ztb-aM-pP5"/>
+                        <outlet property="emailField" destination="mY8-Nm-AJz" id="Jca-dy-vug"/>
+                        <outlet property="errorTextField" destination="NV1-J8-btH" id="EBD-9a-W7g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="be2-qD-WYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
