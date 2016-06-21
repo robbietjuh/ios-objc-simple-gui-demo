@@ -10,7 +10,7 @@
 import Alamofire
 
 class SWApiClient {
-    static let BASE_URL = "http://intern.robbytu.net:8000/api"
+    static let BASE_URL = ""
     
     static func register(email: String, callback: (Result<AnyObject>) -> (Void)) {
         Alamofire.request(.POST, BASE_URL + "/user/register", parameters: ["email": email])
