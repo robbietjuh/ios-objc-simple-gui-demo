@@ -16,6 +16,9 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var weatherAndLocationLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var likesLabel: UILabel!
     
     var data : [String: AnyObject]?
     
@@ -32,11 +35,20 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
         self.scrollView.tag = 1337
         self.scrollView.pagingEnabled = true
         self.scrollView.delegate = self
+        
+        print(data)
     }
     
     override func viewWillAppear(animated: Bool) {
         if self.data != nil {
+            let rootData = self.data as! NSDictionary
             let weatherData = self.data!["weather"] as! NSDictionary
+            let locationData = self.data!["location"] as! NSDictionary
+            let userData = self.data!["user"] as! NSDictionary
+            
+            self.userNameLabel.text = "\(userData["name"] as! String)"
+            self.likesLabel.text = "\(rootData["number_of_likes"] as! Int)"
+
 
             let imageData = self.data?["image"] as? NSData
             if imageData != nil {

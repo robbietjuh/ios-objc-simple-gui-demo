@@ -56,6 +56,10 @@ class LoginViewController : UIViewController, UITextFieldDelegate, UIScrollViewD
         return false
     }
     
+    @IBAction func doenButtonAction(sender: AnyObject) {
+        self.presentMainMenu()
+    }
+    
     func authenticateLogin(email:String){
         self.activityIndicator.startAnimating()
         self.skipButton.hidden = true
