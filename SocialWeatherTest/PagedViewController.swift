@@ -38,9 +38,6 @@ class PagedViewController : UIPageViewController, UIPageViewControllerDataSource
             self.presentViewController(controller, animated: true, completion: nil)
             defaults.setObject("1", forKey: "firstLaunch")
         }
-
-        
-        
     }
     
     func controllerForIndex(index: Int) -> UIViewController? {

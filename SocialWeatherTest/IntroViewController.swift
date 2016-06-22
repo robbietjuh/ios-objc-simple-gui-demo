@@ -11,11 +11,25 @@ import UIKit
 class IntroViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     private var interactor:Interactor = Interactor()
+    let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
     
     // MARK: - View setup
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func uploadButtonAction(sender: AnyObject) {
+        //if ingelogd, ga door naar camera
+        //else, naar tutorial
+        if let user = delegate?.getUserDetails() {
+            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CameraViewController")
+            self.presentViewController(controller, animated: true, completion: nil)
+        } else {
+            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TutorialViewController")
+            self.presentViewController(controller, animated: true, completion: nil)
+        }
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
