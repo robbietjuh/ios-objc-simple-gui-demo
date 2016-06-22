@@ -26,6 +26,20 @@ class SWApiClient {
         }
     }
     
+    static func getPosts(token:String?, callback: (Result<AnyObject>) -> (Void)) {
+        var _token = ""
+        if token != nil {
+            _token = token!
+        }
+        
+        Alamofire.request(.GET, BASE_URL + "/posts/get", headers: [
+            "X-SW-USER-KEY": _token
+            ])
+            .responseJSON {_, _, result in
+                callback(result)
+        }
+    }
+    
     static func uploadImage(token: String, image: NSData, lat: Double, lon: Double, weather_type: CGFloat, callback: (Result<AnyObject>) -> (Void)) {
         let headers = [
             "X-SW-USER-KEY": token
