@@ -32,9 +32,9 @@ class SWApiClient {
         ]
         
         let parameters = [
-            "lat": lat,
-            "lon": lon,
-            "weather_type": weather_type
+            "lat": String(lat),
+            "lon": String(lon),
+            "weather_type": String(weather_type)
         ]
         
         Alamofire.upload(.POST, BASE_URL + "/posts/post", headers: headers, multipartFormData: {
@@ -43,7 +43,7 @@ class SWApiClient {
             multipartFormData.appendBodyPart(data: image, name: "image", fileName: "image.jpg", mimeType: "image/jpeg")
             
             for (key, value) in parameters {
-                multipartFormData.appendBodyPart(data: value.dataUsingEncoding(NSUTF8StringEncoding)!, name: key as! String)
+                multipartFormData.appendBodyPart(data: value.dataUsingEncoding(NSUTF8StringEncoding)!, name: key )
             }
             
         }, encodingCompletion: {
