@@ -21,6 +21,14 @@ class LoginViewController : UIViewController, UITextFieldDelegate, UIScrollViewD
     }
     
     func loginSucceed() {
+        self.presentMainMenu()
+    }
+    
+    @IBAction func skipButtonAction(sender: AnyObject) {
+        self.presentMainMenu()
+    }
+    
+    func presentMainMenu(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
         let introViewController = storyBoard.instantiateViewControllerWithIdentifier("PagedViewController") as! PagedViewController

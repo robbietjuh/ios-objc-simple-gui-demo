@@ -1123,6 +1123,9 @@
                                                         <state key="normal" title="Skip for now">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="skipButtonAction:" destination="CJT-n0-blF" eventType="touchUpInside" id="0up-e8-5M5"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
