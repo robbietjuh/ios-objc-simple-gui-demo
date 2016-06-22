@@ -31,10 +31,35 @@ class SWApiClient {
             "X-SW-USER-KEY": token
         ]
         
-        Alamofire.request(.POST, BASE_URL + "/posts/post", headers: headers, parameters: ["image": image, "lat":lat, "lon": lon, "weather_type": weather_type])
-            .responseJSON { _, _, result in
-                callback(result)
-        }
+        let parameters = [
+            "lat": lat,
+            "lon": lon,
+            "weather_type": weather_type
+        ]
+        
+        Alamofire.upload(.POST, BASE_URL + "/posts/post", headers: headers, multipartFormData: {
+            multipartFormData in
+            
+            multipartFormData.appendBodyPart(data: image, name: "image", fileName: "image.jpg", mimeType: "image/jpeg")
+            
+            for (key, value) in parameters {
+                multipartFormData.appendBodyPart(data: value.dataUsingEncoding(NSUTF8StringEncoding)!, name: key as! String)
+            }
+            
+        }, encodingCompletion: {
+            encodingResult in
+            
+            switch encodingResult {
+            case .Success(let upload, _, _):
+                upload.responseJSON { _, _, result in
+                    callback(result)
+                }
+                break
+            case .Failure(let encodingError):
+                print(encodingError)
+                break
+            }
+        })
     }
 }
 
