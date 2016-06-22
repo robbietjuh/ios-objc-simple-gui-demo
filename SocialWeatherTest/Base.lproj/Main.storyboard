@@ -1196,6 +1196,10 @@
         <scene sceneID="jlM-Bm-gHo">
             <objects>
                 <viewController id="p5Y-tj-ZDz" customClass="LoginViewController" customModule="SocialWeatherTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Oqo-dc-m6W"/>
+                        <viewControllerLayoutGuide type="bottom" id="RK6-R1-SVD"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wt2-kX-xE2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -18,5 +18,12 @@ class SWApiClient {
                 callback(result)
         }
     }
+    
+    static func login(key: String, callback: (Result<AnyObject>) -> (Void)) {
+        Alamofire.request(.POST, BASE_URL + "/user/login", parameters: ["key": key])
+            .responseJSON { _, _, result in
+                callback(result)
+        }
+    }
 }
 

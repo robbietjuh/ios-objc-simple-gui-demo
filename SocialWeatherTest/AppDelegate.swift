@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true
+    }
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        let fullUrl = url.absoluteString.componentsSeparatedByString("//")
+        let token = fullUrl[1]
+
+        SWApiClient.login(token) { result in
+            switch result {
+            case .Success(let json):
+                let response = json as! NSDictionary
+                if response.objectForKey("success") as! Bool {
+                    let defaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setObject(response.objectForKey("data"), forKey: "userDetails")
+                }
+                else {
+                    print("Token does not exist");
+                }
+                break
+                
+            case .Failure(_, _):
+                print("failure")
+            }
+        }
+        
+        return true
+    }
+    
+    /**
+    *
+    * Get the user details if saved
+    */
+    func getUserDetails() -> JSON{
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let userDetails = defaults.dictionaryForKey("userDetails") {
+            return JSON(userDetails)
+        }
+        return nil
     }
     
     func applicationWillResignActive(application: UIApplication) {
