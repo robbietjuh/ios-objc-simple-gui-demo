@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
         return true
     }
     
@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if response.objectForKey("success") as! Bool {
                     let defaults = NSUserDefaults.standardUserDefaults()
                     defaults.setObject(response.objectForKey("data"), forKey: "userDetails")
+                    
+                    NSNotificationCenter.defaultCenter().postNotificationName("loginSucceedNotification", object: self)
                 }
                 else {
                     print("Token does not exist");

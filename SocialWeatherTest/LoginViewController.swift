@@ -16,6 +16,18 @@ class LoginViewController : UIViewController, UITextFieldDelegate, UIScrollViewD
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    override func viewDidLoad() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.loginSucceed), name: "loginSucceedNotification", object: nil)
+    }
+    
+    func loginSucceed() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let introViewController = storyBoard.instantiateViewControllerWithIdentifier("PagedViewController") as! PagedViewController
+        
+        self.presentViewController(introViewController, animated:true, completion:nil)
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)

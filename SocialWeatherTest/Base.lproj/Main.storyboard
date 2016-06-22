@@ -375,7 +375,7 @@
         <!--Paged View Controller-->
         <scene sceneID="vm8-RU-jWl">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="T2S-ed-9jR" customClass="PagedViewController" customModule="SocialWeatherTest" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="PagedViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="T2S-ed-9jR" customClass="PagedViewController" customModule="SocialWeatherTest" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </pageViewController>

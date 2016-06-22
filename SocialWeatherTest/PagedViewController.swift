@@ -32,8 +32,15 @@ class PagedViewController : UIPageViewController, UIPageViewControllerDataSource
     override func viewDidAppear(animated: Bool) {
         // Show the tutorial for the very first time. This should be moved
         // to the loading view in the future
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TutorialViewController")
-        self.presentViewController(controller, animated: true, completion: nil)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if (defaults.objectForKey("firstLaunch") == nil) {
+            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TutorialViewController")
+            self.presentViewController(controller, animated: true, completion: nil)
+            defaults.setObject("1", forKey: "firstLaunch")
+        }
+
+        
+        
     }
     
     func controllerForIndex(index: Int) -> UIViewController? {
