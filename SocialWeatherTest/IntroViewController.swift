@@ -19,17 +19,15 @@ class IntroViewController: UIViewController, UIViewControllerTransitioningDelega
         super.viewDidLoad()
     }
     
-    @IBAction func uploadButtonAction(sender: AnyObject) {
-        //if ingelogd, ga door naar camera
-        //else, naar tutorial
-        if let user = delegate?.getUserDetails() {
-            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CameraViewController")
-            self.presentViewController(controller, animated: true, completion: nil)
-        } else {
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if (self.delegate!.getUserDetails() != nil) {
+            return true
+        }
+        else {
             let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TutorialViewController")
             self.presentViewController(controller, animated: true, completion: nil)
+            return false
         }
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

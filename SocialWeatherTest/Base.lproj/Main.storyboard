@@ -82,7 +82,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="uploadButtonAction:" destination="2cW-yq-bs2" eventType="touchUpInside" id="O8G-aG-vxs"/>
+                                            <segue destination="51o-oL-90y" kind="presentation" id="V7P-76-wBt"/>
                                         </connections>
                                     </button>
                                     <view alpha="0.20000000000000001" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjn-XS-dU2">

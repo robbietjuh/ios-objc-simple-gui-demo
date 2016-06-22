@@ -57,6 +57,14 @@ class CameraViewController : DismissableViewController, CLLocationManagerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Add a gesture recognizer for dismissing the view
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(self.handleDismissablePanGesture(_:)))
+        self.view.addGestureRecognizer(gesture)
+        
+        // Set up a gesture recognizer for making a photo
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        self.view.addGestureRecognizer(gesture2)
+        
         // First, make sure we actually have access to capture devices
         guard self.devices.count > 0 else {
             return
@@ -77,14 +85,6 @@ class CameraViewController : DismissableViewController, CLLocationManagerDelegat
         
         // Switch to the first camera
         self.switchCameras()
-        
-        // Add a gesture recognizer for dismissing the view
-        let gesture = UIPanGestureRecognizer(target: self, action: #selector(self.handleDismissablePanGesture(_:)))
-        self.view.addGestureRecognizer(gesture)
-        
-        // Set up a gesture recognizer for making a photo
-        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-        self.view.addGestureRecognizer(gesture2)
     }
     
     override func viewDidAppear(animated: Bool) {

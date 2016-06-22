@@ -56,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let userDetails = defaults.dictionaryForKey("userDetails") {
             return JSON(userDetails)
         }
+        
         return nil
     }
     
