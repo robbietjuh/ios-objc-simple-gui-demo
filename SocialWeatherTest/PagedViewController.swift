@@ -26,6 +26,20 @@ class PagedViewController : UIPageViewController, UIPageViewControllerDataSource
                            animated: true,
                            completion: nil)
         
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let token = defaults.stringForKey("token")
+        SWApiClient.getPosts(token) { result in
+            switch result {
+            case .Success(let json):
+                let response = json as! NSDictionary
+                print("\(response)")
+                break 
+                
+            case .Failure(_, _):
+                print("fail")
+            }
+        }
+        
         // TODO: Do something with self.data here (fetch the data asap, maybe use some locally cached stuff first)
     }
     
