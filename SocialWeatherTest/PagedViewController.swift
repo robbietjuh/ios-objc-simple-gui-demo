@@ -81,11 +81,10 @@ class PagedViewController : UIPageViewController, UIPageViewControllerDataSource
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
             let data = NSData(contentsOfURL: url!)
-            let image = UIImage(data: data!)
             dispatch_async(dispatch_get_main_queue(), {
                 print("Updating image data for index \(index)")
                 NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "update_picture", object: nil))
-                self.data.objectAtIndex(index).setObject(image, forKey: "image")
+                self.data.objectAtIndex(index).setObject(data!, forKey: "image")
                 self.fetchNextPicture(index + 1)
             });
         }

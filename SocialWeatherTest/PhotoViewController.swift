@@ -15,6 +15,7 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var tempLabel: UILabel!
     
     var data : [String: AnyObject]?
     
@@ -31,15 +32,26 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
         self.scrollView.tag = 1337
         self.scrollView.pagingEnabled = true
         self.scrollView.delegate = self
-        
-        print(data)
-        self.imageView.image = self.data?["image"] as? UIImage
-        
-        NSNotificationCenter.defaultCenter().addObserverForName("update_picture", object: nil, queue: nil) { (_) in
-            self.imageView.image = self.data?["image"] as? UIImage
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if self.data != nil {
+            let weatherData = self.data!["weather"] as! NSDictionary
+
+            let imageData = self.data?["image"] as? NSData
+            if imageData != nil {
+                self.imageView.image = UIImage(data: self.data!["image"] as! NSData)
+                self.tempLabel.text = "\(weatherData["temperature"] as! Int)º"
+            }
+            
+            NSNotificationCenter.defaultCenter().addObserverForName("update_picture", object: nil, queue: nil) { (_) in
+                self.imageView.image = self.data?["image"] as? UIImage
+            }
         }
-        
-        // TODO: Do something with self.data here
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        self.imageView.image = nil
     }
     
     // MARK: - Scroll view delegate handlers
