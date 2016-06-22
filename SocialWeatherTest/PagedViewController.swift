@@ -60,11 +60,34 @@ class PagedViewController : UIPageViewController, UIPageViewControllerDataSource
                 
                 self.data = _posts
                 
+                if(_posts.count > 0) {
+                    self.fetchNextPicture(0)
+                }
+                
                 break
                 
-            case .Failure(let a, let b):
+            case .Failure(_, _):
                 print("err!")
             }
+        }
+    }
+    
+    func fetchNextPicture(index: Int) {
+        if index >= self.data.count {
+            return
+        }
+        
+        let url = NSURL(string: self.data.objectAtIndex(index)["photo_url"] as! String)
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            let data = NSData(contentsOfURL: url!)
+            let image = UIImage(data: data!)
+            dispatch_async(dispatch_get_main_queue(), {
+                print("Updating image data for index \(index)")
+                NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "update_picture", object: nil))
+                self.data.objectAtIndex(index).setObject(image, forKey: "image")
+                self.fetchNextPicture(index + 1)
+            });
         }
     }
     

@@ -364,6 +364,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="blurContainer" destination="yws-ef-mxV" id="sgE-f9-lcZ"/>
+                        <outlet property="imageView" destination="Fow-Q1-t9y" id="SSJ-Sa-zFp"/>
                         <outlet property="scrollView" destination="h0g-6f-ZE9" id="E29-7t-lNx"/>
                         <outlet property="userDetailView" destination="bKh-d3-JMe" id="F1g-X0-Nth"/>
                     </connections>

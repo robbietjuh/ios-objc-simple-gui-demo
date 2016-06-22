@@ -14,6 +14,8 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
     @IBOutlet weak var blurContainer: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     var data : [String: AnyObject]?
     
     // MARK: - View setup
@@ -31,6 +33,12 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
         self.scrollView.delegate = self
         
         print(data)
+        self.imageView.image = self.data?["image"] as? UIImage
+        
+        NSNotificationCenter.defaultCenter().addObserverForName("update_picture", object: nil, queue: nil) { (_) in
+            self.imageView.image = self.data?["image"] as? UIImage
+        }
+        
         // TODO: Do something with self.data here
     }
     
