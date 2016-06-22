@@ -10,7 +10,7 @@ import UIKit
 
 class PagedViewController : UIPageViewController, UIPageViewControllerDataSource {
     
-    var data = [["temp": 20], ["temp": 20], ["temp": 20], ["temp": 20], ["temp": 20], ["temp": 20]]
+    var data = NSMutableArray()
     let introController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("IntroViewController")
     
     override func viewDidLoad() {
@@ -31,16 +31,41 @@ class PagedViewController : UIPageViewController, UIPageViewControllerDataSource
         SWApiClient.getPosts(token) { result in
             switch result {
             case .Success(let json):
-                let response = json as! NSDictionary
-                print("\(response)")
-                break 
+                let _posts = NSMutableArray()
                 
-            case .Failure(_, _):
-                print("fail")
+                let response_root = json as! NSDictionary
+                let response = response_root.objectForKey("data") as! NSDictionary
+                
+                // Get all components
+                let users = response.objectForKey("users") as! NSDictionary
+                let photos = response.objectForKey("photos") as! NSDictionary
+                let posts = response.objectForKey("posts") as! NSArray
+                
+                for post in posts {
+                    // Fetch image url
+                    let photo_id = "\(post.objectForKey("photo_id") as! Int)"
+                    let photo_obj = photos.objectForKey(photo_id) as! NSDictionary
+                    let photo_url = photo_obj.objectForKey("image") as! String
+                    
+                    // Fetch user
+                    let user_id = "\(post.objectForKey("user_id") as! Int)"
+                    let user_obj = users.objectForKey(user_id) as! NSDictionary
+                    
+                    // Put it together
+                    let _post = NSMutableDictionary(dictionary: post as! [String : AnyObject])
+                    _post.setObject(photo_url, forKey: "photo_url")
+                    _post.setObject(user_obj, forKey: "user")
+                    _posts.addObject(_post)
+                }
+                
+                self.data = _posts
+                
+                break
+                
+            case .Failure(let a, let b):
+                print("err!")
             }
         }
-        
-        // TODO: Do something with self.data here (fetch the data asap, maybe use some locally cached stuff first)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -56,14 +81,19 @@ class PagedViewController : UIPageViewController, UIPageViewControllerDataSource
     
     func controllerForIndex(index: Int) -> UIViewController? {
         // Check wether we have data for that view and if so, create the view controller
-        guard let nextData = self.data[safe: index - 1],
-              let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PhotoViewController") as? PhotoViewController
-              else {
-            return nil
+        if index > self.data.count || index < 0 {
+            return nil;
+        }
+        
+        let nextData = self.data.objectAtIndex(index - 1)
+        
+        guard let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PhotoViewController") as? PhotoViewController
+            else {
+                return nil
         }
         
         // Pass the retrieved data to that controller
-        controller.data = nextData
+        controller.data = nextData as? [String : AnyObject]
         controller.view.tag = index
         
         // Return the controller
