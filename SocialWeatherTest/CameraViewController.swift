@@ -28,6 +28,7 @@ class CameraViewController : DismissableViewController, CLLocationManagerDelegat
     
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
     
     // Initialize a location manager for GPS coords
     let locationManager = CLLocationManager()
@@ -252,9 +253,27 @@ class CameraViewController : DismissableViewController, CLLocationManagerDelegat
         // The remote server will resolve the temperature and name of the place again
         // so we won't have to send that. Lat/lon will suffice.
         NSLog("Upload to server")
+        SWApiClient.uploadImage((delegate?.getToken())!, image: picture, lat: location.latitude, lon: location.longitude, weather_type: weatherType){ result in
+            switch result {
+            case .Success(let json):
+                let response = json as! NSDictionary
+                if response.objectForKey("success") as! Bool {
+                    print(response)
+                }
+                else {
+                    print("else")
+                    print(response)
+                }
+                break
+                
+            case .Failure(_, _):
+                print("fail")
+            }
+        }
         
+    
         // Show an animated checkbox on completion
-        UIView.animateWithDuration(0.4, animations: { 
+        UIView.animateWithDuration(0.4, animations: {
             self.activityIndicator.alpha = 0
         }) { (Bool) in
             self.activityIndicator.stopAnimating()

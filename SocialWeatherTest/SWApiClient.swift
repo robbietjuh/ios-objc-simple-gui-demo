@@ -25,5 +25,16 @@ class SWApiClient {
                 callback(result)
         }
     }
+    
+    static func uploadImage(token: String, image: NSData, lat: Double, lon: Double, weather_type: CGFloat, callback: (Result<AnyObject>) -> (Void)) {
+        let headers = [
+            "X-SW-USER-KEY": token
+        ]
+        
+        Alamofire.request(.POST, BASE_URL + "/posts/post", headers: headers, parameters: ["image": image, "lat":lat, "lon": lon, "weather_type": weather_type])
+            .responseJSON { _, _, result in
+                callback(result)
+        }
+    }
 }
 

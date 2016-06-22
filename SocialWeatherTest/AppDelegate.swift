@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if response.objectForKey("success") as! Bool {
                     let defaults = NSUserDefaults.standardUserDefaults()
                     defaults.setObject(response.objectForKey("data"), forKey: "userDetails")
+                    defaults.setObject(token, forKey: "token")
                     
                     NSNotificationCenter.defaultCenter().postNotificationName("loginSucceedNotification", object: self)
                 }
@@ -58,6 +59,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return nil
+    }
+    
+    func getToken() -> String {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let token = defaults.stringForKey("token") {
+            return token
+        }
+        
+        return ""
     }
     
     func applicationWillResignActive(application: UIApplication) {

@@ -30,6 +30,7 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
         self.scrollView.pagingEnabled = true
         self.scrollView.delegate = self
         
+        print(data)
         // TODO: Do something with self.data here
     }
     
