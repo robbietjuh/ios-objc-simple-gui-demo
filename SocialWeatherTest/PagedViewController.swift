@@ -16,6 +16,8 @@ class PagedViewController : UIPageViewController, UIPageViewControllerDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PagedViewController.getPosts), name: "newUploadedImage", object: nil)
+        
         // Set up the data source to be ourselves
         self.dataSource = self
         
@@ -26,8 +28,14 @@ class PagedViewController : UIPageViewController, UIPageViewControllerDataSource
                            animated: true,
                            completion: nil)
         
+        self.getPosts()
+        
+    }
+    
+    func getPosts(){
         let defaults = NSUserDefaults.standardUserDefaults()
         let token = defaults.stringForKey("token")
+        
         SWApiClient.getPosts(token) { result in
             switch result {
             case .Success(let json):

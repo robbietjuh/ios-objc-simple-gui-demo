@@ -259,6 +259,7 @@ class CameraViewController : DismissableViewController, CLLocationManagerDelegat
                 let response = json as! NSDictionary
                 if response.objectForKey("success") as! Bool {
                     print(response)
+                    NSNotificationCenter.defaultCenter().postNotificationName("newUploadedImage", object: self)
                 }
                 else {
                     print("else")
