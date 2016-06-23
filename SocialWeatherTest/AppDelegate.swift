@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let response = json as! NSDictionary
                 if response.objectForKey("success") as! Bool {
                     let defaults = NSUserDefaults.standardUserDefaults()
-                    defaults.setObject(response.objectForKey("data"), forKey: "userDetails")
                     defaults.setObject(token, forKey: "token")
                     
                     NSNotificationCenter.defaultCenter().postNotificationName("loginSucceedNotification", object: self)
@@ -45,20 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
-    }
-    
-    /**
-    *
-    * Get the user details if saved
-    */
-    func getUserDetails() -> JSON{
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        if let userDetails = defaults.dictionaryForKey("userDetails") {
-            return JSON(userDetails)
-        }
-        
-        return nil
     }
     
     func getToken() -> String {

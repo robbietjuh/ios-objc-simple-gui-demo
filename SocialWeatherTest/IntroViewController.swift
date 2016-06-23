@@ -17,11 +17,10 @@ class IntroViewController: UIViewController, UIViewControllerTransitioningDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(delegate?.getUserDetails())
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if (self.delegate!.getUserDetails() != nil) {
+        if (self.delegate!.getToken() != "") {
             return true
         }
         else {
