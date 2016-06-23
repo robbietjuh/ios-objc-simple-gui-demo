@@ -149,7 +149,7 @@ class CameraViewController : DismissableViewController, CLLocationManagerDelegat
                 self.labelConditionsCloudy.text = "Cloudy \(city)".uppercaseString
                 self.labelConditionsRainy.text = "Rainy \(city)".uppercaseString
                 self.labelConditionsFoggy.text = "Foggy \(city)".uppercaseString
-                self.labelConditionsThunder.text = "Thundering \(city)".uppercaseString
+                self.labelConditionsThunder.text = "Thunder \(city)".uppercaseString
                 self.labelTemperature.text = "\(temp)°"
                 
                 // Show the views

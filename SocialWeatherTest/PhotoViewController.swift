@@ -88,6 +88,8 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
             return "Rainy"
         case 3  :
             return "Foggy"
+        case 3  :
+            return "Thunder"
         default :
             return "Sunny"
         }
