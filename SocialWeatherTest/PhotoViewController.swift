@@ -145,7 +145,7 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
             // This is not the first cell so this should be an activity cell. We should hook this up
             // to an actual data source. Tip: use `indexPath.row` to get the index and relate that back
             // to an array of comments or so, to be able to fill these cells from an actual data source.
-            let comment = self.comments![0]
+            let comment = self.comments![indexPath.row - 1]
             let comment_txt = comment["comment"] as! String
             
             cell.textLabel!.text = comment_txt
