@@ -20,6 +20,7 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var placeNameLabel: UILabel!
+    @IBOutlet weak var weatherIconImage: UIImageView!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -50,7 +51,7 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
             let locationData = self.data!["location"] as! NSDictionary
             let userData = self.data!["user"] as! NSDictionary
             
-            
+            self.weatherIconImage.image = UIImage(named: getWeatherType(weatherData["weather_type"] as! Int) + "Icon")
             self.weatherAndLocationLabel.text = (getWeatherType(weatherData["weather_type"] as! Int)).uppercaseString
             self.placeNameLabel.text = ("\(locationData["city"] as! String)").uppercaseString
             self.userNameLabel.text = "\(userData["name"] as! String)"

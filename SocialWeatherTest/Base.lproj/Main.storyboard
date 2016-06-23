@@ -373,6 +373,7 @@
                         <outlet property="userDetailView" destination="bKh-d3-JMe" id="F1g-X0-Nth"/>
                         <outlet property="userNameLabel" destination="Osq-o2-uLD" id="5yd-Ce-Zsm"/>
                         <outlet property="weatherAndLocationLabel" destination="YGJ-tX-bgr" id="Vxh-8h-BwV"/>
+                        <outlet property="weatherIconImage" destination="fO7-S1-Tlx" id="uyk-ks-9Ey"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
