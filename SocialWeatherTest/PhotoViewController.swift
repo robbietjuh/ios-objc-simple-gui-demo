@@ -19,6 +19,8 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
     @IBOutlet weak var weatherAndLocationLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var likesLabel: UILabel!
+    @IBOutlet weak var placeNameLabel: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
     
     var data : [String: AnyObject]?
@@ -48,6 +50,9 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
             let locationData = self.data!["location"] as! NSDictionary
             let userData = self.data!["user"] as! NSDictionary
             
+            
+            self.weatherAndLocationLabel.text = (getWeatherType(weatherData["weather_type"] as! Int)).uppercaseString
+            self.placeNameLabel.text = ("\(locationData["city"] as! String)").uppercaseString
             self.userNameLabel.text = "\(userData["name"] as! String)"
             self.likesLabel.text = "\(rootData["number_of_likes"] as! Int)"
             self.tempLabel.text = "\(weatherData["temperature"] as! Int)º"
@@ -69,6 +74,21 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
             }
             
             self.tableView.reloadData()
+        }
+    }
+    
+    func getWeatherType(number: Int) -> String{
+        switch number {
+        case 0  :
+            return "Sunny"
+        case 1  :
+            return "Cloudy"
+        case 2  :
+            return "Rainy"
+        case 3  :
+            return "Foggy"
+        default :
+            return "Sunny"
         }
     }
     
