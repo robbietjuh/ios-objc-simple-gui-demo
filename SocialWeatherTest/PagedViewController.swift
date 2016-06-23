@@ -58,6 +58,8 @@ class PagedViewController : UIPageViewController, UIPageViewControllerDataSource
                         comment_objs = []
                     }
                     
+                    print("Comments for \(photo_id): \(comment_objs) \(post)")
+                    
                     // Put it together
                     let _post = NSMutableDictionary(dictionary: post as! [String : AnyObject])
                     _post.setObject(photo_url, forKey: "photo_url")

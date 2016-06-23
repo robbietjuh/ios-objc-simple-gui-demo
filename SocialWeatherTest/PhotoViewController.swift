@@ -118,7 +118,8 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
     // MARK: - Table view datasource handlers
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 && self.comments != nil ? self.comments!.count : 0
+        if self.comments == nil { return 1 }
+        return section == 0 ? self.comments!.count + 1 : 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -145,8 +146,11 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
             // This is not the first cell so this should be an activity cell. We should hook this up
             // to an actual data source. Tip: use `indexPath.row` to get the index and relate that back
             // to an array of comments or so, to be able to fill these cells from an actual data source.
-            cell.textLabel!.text = "I like your photos, Phil! \(indexPath.row)"
-            cell.detailTextLabel!.text = "3h"
+            let comment = self.comments![indexPath.row - 1]
+            let comment_txt = comment["comment"] as! String
+            
+            cell.textLabel!.text = comment_txt
+            cell.detailTextLabel!.text = "1d"
             
             // Add user profile picture
             let avatarImageView = UIImageView(frame: CGRectMake(20, 10, 25, 25))
