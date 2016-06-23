@@ -22,6 +22,8 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
     
     var data : [String: AnyObject]?
     
+    var imageSet = false
+    
     // MARK: - View setup
     
     override func viewDidLoad() {
@@ -48,16 +50,20 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
             
             self.userNameLabel.text = "\(userData["name"] as! String)"
             self.likesLabel.text = "\(rootData["number_of_likes"] as! Int)"
-
+            self.tempLabel.text = "\(weatherData["temperature"] as! Int)º"
 
             let imageData = self.data?["image"] as? NSData
             if imageData != nil {
                 self.imageView.image = UIImage(data: self.data!["image"] as! NSData)
-                self.tempLabel.text = "\(weatherData["temperature"] as! Int)º"
+                self.imageSet = true
             }
             
             NSNotificationCenter.defaultCenter().addObserverForName("update_picture", object: nil, queue: nil) { (_) in
-                self.imageView.image = self.data?["image"] as? UIImage
+                let imageData = self.data?["image"] as? NSData
+                if imageData != nil {
+                    self.imageView.image = UIImage(data: self.data!["image"] as! NSData)
+                    self.imageSet = true
+                }
             }
         }
     }
