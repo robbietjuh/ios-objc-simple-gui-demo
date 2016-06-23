@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fev-hM-lZ5" userLabel="Navigation">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fev-hM-lZ5" userLabel="Navigation">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Cd-xW-25g">
@@ -836,10 +836,34 @@
                                     <constraint firstAttribute="width" constant="266" id="ZtK-GM-Ww5"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to SocialWeather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGr-QX-IPh">
+                                <rect key="frame" x="20" y="245" width="335" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="E9T-Wc-vcn"/>
+                                    <constraint firstAttribute="height" constant="21" id="n40-cX-few"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to get to know the app." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQM-V5-urd">
+                                <rect key="frame" x="20" y="264" width="335" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="4cv-cz-ZEA"/>
+                                    <constraint firstAttribute="width" constant="335" id="VyE-qD-AmV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1647058824" green="0.56470588239999997" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="ZQM-V5-urd" firstAttribute="centerX" secondItem="tsd-WZ-8WX" secondAttribute="centerX" id="8uk-Xd-jHm"/>
                             <constraint firstItem="MIj-xI-Nas" firstAttribute="top" secondItem="JQj-1X-MAM" secondAttribute="bottom" constant="34" id="BWd-M2-yPc"/>
+                            <constraint firstItem="ZQM-V5-urd" firstAttribute="top" secondItem="MIj-xI-Nas" secondAttribute="bottom" constant="130" id="I3Q-rH-Oxa"/>
+                            <constraint firstItem="WGr-QX-IPh" firstAttribute="centerX" secondItem="tsd-WZ-8WX" secondAttribute="centerX" id="T8k-ae-Yxt"/>
+                            <constraint firstItem="WGr-QX-IPh" firstAttribute="top" secondItem="MIj-xI-Nas" secondAttribute="bottom" constant="111" id="vWs-FF-ZL1"/>
                             <constraint firstItem="MIj-xI-Nas" firstAttribute="centerX" secondItem="tsd-WZ-8WX" secondAttribute="centerX" id="xjT-J4-pWX"/>
                         </constraints>
                     </view>
