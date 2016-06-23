@@ -40,6 +40,7 @@ class PagedViewController : UIPageViewController, UIPageViewControllerDataSource
                 let users = response.objectForKey("users") as! NSDictionary
                 let photos = response.objectForKey("photos") as! NSDictionary
                 let posts = response.objectForKey("posts") as! NSArray
+                let comments = response.objectForKey("comments") as! NSDictionary
                 
                 for post in posts {
                     // Fetch image url
@@ -51,10 +52,17 @@ class PagedViewController : UIPageViewController, UIPageViewControllerDataSource
                     let user_id = "\(post.objectForKey("user_id") as! Int)"
                     let user_obj = users.objectForKey(user_id) as! NSDictionary
                     
+                    // Fetch comments
+                    var comment_objs = comments[photo_id] as? NSArray
+                    if comment_objs == nil {
+                        comment_objs = []
+                    }
+                    
                     // Put it together
                     let _post = NSMutableDictionary(dictionary: post as! [String : AnyObject])
                     _post.setObject(photo_url, forKey: "photo_url")
                     _post.setObject(user_obj, forKey: "user")
+                    _post.setObject(comment_objs!, forKey: "comments")
                     _posts.addObject(_post)
                 }
                 

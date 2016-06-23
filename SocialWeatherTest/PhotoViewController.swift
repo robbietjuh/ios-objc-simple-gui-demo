@@ -19,8 +19,10 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
     @IBOutlet weak var weatherAndLocationLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var likesLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     var data : [String: AnyObject]?
+    var comments : [[String: AnyObject]]?
     
     var imageSet = false
     
@@ -37,8 +39,6 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
         self.scrollView.tag = 1337
         self.scrollView.pagingEnabled = true
         self.scrollView.delegate = self
-        
-        print(data)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -60,6 +60,8 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
                 self.imageSet = true
             }
             
+            self.comments = data!["comments"] as? [[String : AnyObject]]
+            
             NSNotificationCenter.defaultCenter().addObserverForName("update_picture", object: nil, queue: nil) { (_) in
                 let imageData = self.data?["image"] as? NSData
                 if imageData != nil {
@@ -67,6 +69,8 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
                     self.imageSet = true
                 }
             }
+            
+            self.tableView.reloadData()
         }
     }
     
@@ -110,7 +114,7 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
     // MARK: - Table view datasource handlers
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 20 : 0 // return 20 demo cells. TODO: have an actual data source handle this
+        return section == 0 && self.comments != nil ? self.comments!.count : 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
