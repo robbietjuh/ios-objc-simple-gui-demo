@@ -129,13 +129,12 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate, UITableViewDa
         
         if(indexPath.row == 0 && cell.subviews.count != 5) {
             // The very first cell should be one that allows the user to comment on the photo.
-            // Add the avater image (TODO: get the avatar from an actual data source)
             let avatarImageView = UIImageView(frame: CGRectMake(20, 10, 25, 25))
             avatarImageView.backgroundColor = UIColor.clearColor()
             avatarImageView.image = UIImage(named: "round-profile.png")
             cell.addSubview(avatarImageView)
         
-            // Add the textfield with an opaque placeholder text (TODO: add a handler for pressing 'OK' on the keyboard)
+            // Add the textfield with an opaque text
             let placeholderColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
             let textField = UITextField(frame: CGRectMake(60, 0, self.view.frame.size.width - 90, cell.frame.size.height))
             textField.textColor = UIColor.whiteColor()

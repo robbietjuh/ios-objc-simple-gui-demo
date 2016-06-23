@@ -249,10 +249,8 @@ class CameraViewController : DismissableViewController, CLLocationManagerDelegat
         
         let weatherType = self.weatherScrollView.contentOffset.x / self.weatherScrollView.frame.size.width
         
-        // TODO: Send location, picture and weatherType to the remote api server.
         // The remote server will resolve the temperature and name of the place again
         // so we won't have to send that. Lat/lon will suffice.
-        NSLog("Upload to server")
         SWApiClient.uploadImage((delegate?.getToken())!, image: picture, lat: location.latitude, lon: location.longitude, weather_type: weatherType){ result in
             switch result {
             case .Success(let json):
